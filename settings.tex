@@ -1,0 +1,269 @@
+\usepackage{tabularx}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+\usepackage{manfnt}
+\usepackage[T1]{fontenc}
+\renewcommand\rmdefault{ptm}
+\usepackage[centering,paperwidth=18.5cm,paperheight=26cm,
+           top=3cm,bottom=3cm,right=2.75cm,left=2.75cm]{geometry}
+\usepackage[complete,amssymbols,amsbb,eufrak,nofontinfo,
+             subscriptcorrection,zswash,mtpscr]{mtpro2}
+\usepackage{mathtools,mathrsfs}
+\usepackage{caption}
+
+\usepackage{extarrows}
+\usepackage{graphicx,pgfornament-han}
+
+\setmainfont{Times New Roman}
+
+\usepackage{pifont}
+\usepackage{imakeidx}
+\makeindex[
+title={名词索引},
+intoc=true,
+columns=2,
+columnsep=1cm,
+columnseprule=true,
+program=makeindex,
+options={-s mkind.ist},
+noautomatic=false
+]
+\indexsetup{
+toclevel=chapter,
+headers={名词索引}{名词索引},
+othercode={
+\renewcommand{\indexspace}{\smallskip}
+}
+}
+
+\usepackage[hyperindex]{hyperref}
+\hypersetup{bookmarksopen=true,bookmarksopenlevel=1,bookmarksnumbered=true,
+  pdftitle={Berkeley数学问题},pdfauthor={向禹},linktoc=all,CJKbookmarks=true,unicode,
+  colorlinks,linkcolor=blue,citecolor=red,urlcolor=blue,anchorcolor=green}
+\usepackage[Symbol]{upgreek}
+\renewcommand{\pi}{\uppi}
+
+\DeclareSymbolFont{ugmL}{OMX}{yhex}{m}{n}
+\DeclareMathAccent{\wideparen}{\mathord}{ugmL}{"F3}
+
+\setCJKmainfont[BoldFont={方正黑体_GBK},ItalicFont={方正楷体_GBK}
+,Mapping=fullwidth-stop]{方正书宋_GBK}
+
+\defaultfontfeatures{Mapping=tex-text}
+\XeTeXlinebreaklocale ”zh”
+\XeTeXlinebreakskip = 0pt plus 1pt
+
+\setCJKfamilyfont{song}{方正书宋_GBK}
+\newcommand{\song}{\CJKfamily{song}}
+\setCJKfamilyfont{hei}{方正黑体_GBK}
+\newcommand{\hei}{\CJKfamily{hei}}
+\setCJKfamilyfont{kai}{方正楷体_GBK}
+\newcommand{\kai}{\CJKfamily{kai}}
+\setCJKfamilyfont{fs}{方正仿宋_GBK}
+\newcommand{\fs}{\CJKfamily{fs}}
+\setCJKfamilyfont{fzxk}{方正行楷_GBK}
+\newcommand{\fzxk}{\CJKfamily{fzxk}}
+\setCJKfamilyfont{fzqt}{方正启体简体}
+\newcommand{\fzqt}{\CJKfamily{fzqt}}
+%\newenvironment{Proof}{\par\indent{\hei 证}\hspace{1em}}{\hfill\ding73\par}
+%\newenvironment{solve}{\par\indent{\hei 解}\hspace{1em}}{\par}
+
+
+\usepackage{tasks}
+\settasks{
+label = (\arabic*),
+item-indent = 1.7em,
+label-width = 0.5em,
+label-offset = 1.2em,
+column-sep=10pt,
+label-align=left,
+after-item-skip=0pt
+}
+\usepackage{multicol}
+
+%\everymath{\displaystyle}
+
+\renewcommand{\le}{\leqslant}
+\renewcommand{\ge}{\geqslant}
+
+\allowdisplaybreaks[4]
+
+
+\newcommand\OR{\overrightarrow}
+
+
+
+\usepackage{fancyhdr,tikz}
+\usetikzlibrary{arrows.meta,patterns}
+\renewcommand{\Re}{\operatorname{\mathrm{Re}}}
+\renewcommand{\Im}{\operatorname{\mathrm{Im}}}
+\newcommand{\ii}{\mathrm i}
+\ctexset{punct=kaiming}
+\renewcommand\thempfootnote{\ding{45}}
+\newenvironment{note}{\par\CJKfamily{note}\noindent{\makebox[0pt][r]{\scriptsize\color{red!90}
+\textdbend\quad}\textbf{注:}}}{\par}
+\pagestyle{fancy}
+\fancyhf{}
+\cfoot{\thepage}
+\fancyhead[LO,RE]{\href{yuxtech.github.io}{我的博客: yuxtech.github.io}}
+\fancyhead[RO,LE]{\rightmark}
+
+\counterwithin{chapter}{part}
+\renewcommand\thechapter{\arabic{chapter}}
+\ctexset {
+  chapter = {
+  beforeskip = 0pt,
+  fixskip = true,
+  format = \Huge\bfseries,
+  nameformat = \rule{\linewidth}{1bp}\par\bigskip\hfill\label{chap\thechapter}\chapternamebox,
+  number = \arabic{chapter},
+  aftername = \par\medskip,
+  aftertitle = \par\bigskip\nointerlineskip\rule{\linewidth}{2bp}\par
+},
+  section = {
+    titleformat+  = \label{sec\thesection}\raggedright
+  }
+}
+\newcommand\chapternamebox[1]{%
+\parbox{\ccwd}{\linespread{1}\selectfont\centering #1}}
+
+
+
+\usepackage[inline]{enumitem}
+\let\mod\relax
+\DeclareMathOperator{\mod}{mod}
+
+\DeclareMathOperator{\ee}{\!\!\;\mathrm e}
+\newcommand{\MR}{\mathbb R}
+\newcommand{\MQ}{\mathbb Q}
+\newcommand{\MC}{\mathbb C}
+\newcommand{\MF}{\mathbb F}
+\newcommand{\MZ}{\mathbb Z}
+\newcommand{\MN}{\mathbb N}
+\newcommand{\MCF}{\mathscr F}
+
+\newenvironment{eenum}{\begin{enumerate}
+[label=\it\arabic*.\protect\label{\theexample.\arabic{enumi}},left=0.5cm,
+ref=\it\arabic*]}
+{
+\end{enumerate}}
+\newenvironment{enuma}
+{\begin{enumerate*}
+  [label=\it\arabic*.\protect\label{\theexample.\arabic{enumi}},
+  itemjoin=\\\hspace*{0.5cm},ref=\it\arabic*]}
+{
+\end{enumerate*}}
+\newenvironment{enumb}
+{\begin{enumerate*}
+  [label=\it\arabic*.\protect\label{\theexample.\arabic{enumi}},
+  itemjoin=\\,ref=\it\arabic*]}
+{
+\end{enumerate*}}
+\newenvironment{enumc}
+{\begin{enumerate}
+  [label=\it\arabic*.\protect\label{\theexample.\arabic{enumi}},
+  left=0cm,ref=\it\arabic*]}
+{
+\end{enumerate}}
+
+\newcommand\quan[1]{
+\tikz[baseline=(a.base)]\node(a)[inner sep=0.5pt,draw,circle]{$#1$};
+}
+\newcommand\closure[1]{%
+{}\mkern2mu\overline{\mkern-2mu#1}
+}
+\renewcommand\bar{\closure}
+
+
+
+\newcounter{example}
+\counterwithin{example}{section}
+\renewcommand\theexample{\thechapter.\arabic{section}.\arabic{example}}
+\newenvironment{example}{\par%
+  \refstepcounter{example}%
+  \hypertarget{ex\theexample}{}\label{ex\theexample}
+  \noindent\hyperlink{ans\theexample}{\textbf{\theexample}}
+}{\par}
+
+\newcounter{ans}
+\counterwithin{ans}{section}
+\renewcommand\theans{\thechapter.\arabic{section}.\arabic{ans}}
+\newenvironment{ans}{\par%
+  \refstepcounter{ans}%
+  \hypertarget{ans\theans}{}
+  \noindent\hyperlink{ex\theans}{\textbf{\theans}}
+}{\par}
+
+
+
+%\usepackage[amsmath,thmmarks]{ntheorem}
+%{
+%\theoremstyle{nonumberplain}
+%\theoremheaderfont{\bfseries}
+%\theorembodyfont{\normalfont}
+%\theoremsymbol{\mbox{$\Box$}}
+%\newtheorem{proof}{\noindent 证\,}
+%\newtheorem{solution}{\noindent 解\,}
+%}
+\usepackage{amsthm}
+\newtheorem{lemma}{\noindent 引理\,}[section]
+
+\setlist{nosep}
+
+
+
+\newcommand\pp[2]{\frac{\partial #1}{\partial #2}}
+\newcommand\ppp[2]{\frac{\partial^2 #1}{\partial #2^2}}
+\newcommand\pppp[3]{\frac{\partial^2 #1}{\partial #2\partial #3}}
+\newcommand\dd[2]{\frac{\mathrm d#1}{\mathrm d#2}}
+\newcommand\ddd[2]{\frac{\mathrm d^2#1}{\mathrm d#2^2}}
+\newcommand\dx{\mathrm dx}
+\newcommand\dy{\mathrm dy}
+\newcommand\dz{\mathrm dz}
+\newcommand\dzz{\mathrm d\bar z}
+\usepackage[subrefformat=parens]{subcaption}
+\DeclareMathOperator{\Arg}{Arg}
+\DeclareMathOperator{\vol}{vol}
+%\usepackage{tkz-euclide}
+
+\catcode`\;=\active
+\newcommand{;}{\text{；}}
+\numberwithin{equation}{section}
+\DeclareMathOperator\diam{diam}
+\DeclareMathOperator{\Log}{Log}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator*{\Res}{Res}
+\newcommand\DD{D}
+\catcode`\;=13
+\newcommand{;}{\text{；}}
+\catcode`\:=13
+\newcommand{:}{\text{：}}
+\let\oldlim\lim
+\def\lim{\oldlim\limits}
+\let\oldsup\sup
+\def\sup{\oldsup\limits}
+
+\newcounter{method}
+\counterwithin{method}{ans}
+\renewcommand\themethod{方法\chinese{method}\hspace{0.5\ccwd}}
+\def\method{\noindent\refstepcounter{method}\textbf{\themethod}}
+
+\usepackage[toc]{multitoc}
+\def\bd{\boldsymbol}
+\def\VA{\bd A}
+\def\VB{\bd B}
+\def\VC{\bd C}
+\def\VD{\bd D}
+\def\VE{\bd E}
+\def\VO{\bd O}
+\def\VQ{\bd Q}
+\def\VP{\bd P}
+\def\VX{\bd X}
+\def\ba{\bd \alpha}
+\def\bb{\bd \beta}
+\def\bg{\bd \gamma}
+\def\vx{\bd x}
+\def\vy{\bd y}
+\def\zero{\bd 0}
+\def\TT{^{\mathrm T}}

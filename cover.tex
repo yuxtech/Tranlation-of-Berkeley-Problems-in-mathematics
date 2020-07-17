@@ -1,0 +1,63 @@
+
+\pdfbookmark[0]{封面}{cover}
+
+\begin{tikzpicture}[remember picture, overlay]
+  \fill[white](current page.south east)rectangle (current page.north west);
+  \coordinate (A) at (current page.south west);
+  \coordinate (B) at (current page.north west);
+  \fill[orange] (A) -- ++(4,0)--([xshift=4cm]B)--(B)--cycle;
+  \node[anchor=north east,blue!30,scale=0.5] at (current page.north east)
+  {\pgfornamenthan[symmetry=v]{9}};
+  \node[anchor=south east,blue!30,scale=0.5] at (current page.south east)
+  {\pgfornamenthan[symmetry=c]{9}};
+  \coordinate (C) at ([yshift=0.8\textheight]A);
+  \coordinate (D) at ([yshift=0.95\textheight]A);
+  \coordinate (E) at (D-|current page.south east);
+  \coordinate (F) at (C-|current page.north east);
+  \fill[green!50!black] (C)--(D)-- (E) -- (F) -- cycle;
+  \node[anchor =north east,font=\Huge] at ([xshift=-2em]E)
+  {\heiti\color{white}向禹 \tikz\draw circle(0.36)circle(0.26); 编著};
+  \node[anchor =south east,font=\Huge] at ([xshift=-2em]F)
+  {\heiti\color{white}第一版};
+  \node[anchor =south east,scale=3,font=\heiti] at (E)  {伯克利数学问题};
+  \node[scale=2] at ([yshift=2cm]current page.south){哈尔滨工业大学出版社};
+  \node[scale=0.8] at ([shift={(0.15\textwidth,-0.2\textwidth)}]current page.center)
+  {\newcounter{density}
+\setcounter{density}{20}
+\begin{tikzpicture}
+    \def\couleur{MidnightBlue}
+    \path[coordinate] (0,0)  coordinate(A)
+                ++( 60:12cm) coordinate(B)
+                ++(-60:12cm) coordinate(C);
+    \draw[fill=\couleur!\thedensity] (A) -- (B) -- (C) -- cycle;
+    \foreach \x in {1,...,15}{%
+        \pgfmathsetcounter{density}{\thedensity+10}
+        \setcounter{density}{\thedensity}
+        \path[coordinate] coordinate(X) at (A){};
+        \path[coordinate] (A) -- (B) coordinate[pos=.12](A)
+                            -- (C) coordinate[pos=.12](B)
+                            -- (X) coordinate[pos=.12](C);
+        \draw[fill=\couleur!\thedensity] (A)--(B)--(C)--cycle;
+    }
+\end{tikzpicture}};
+%  \node[opacity=0.05,blue] at (current page.center)
+%  {\pgfornament[scale=9]{124}};
+\end{tikzpicture}
+\newpage
+
+
+\pdfbookmark[0]{书名页}{bookname}
+\begin{tikzpicture}[remember picture, overlay]
+   \node[font=\huge] at ([yshift=0.5\textwidth]current page.center)
+   {\CJKfontspec{汉仪大宋简}伯克利数学问题};
+
+   \node[font=\Large] at ([yshift=0.3\textwidth]current page.center)
+   {\kaishu 向禹\quad \heiti 编著};
+
+   \node[align=center,font=\Large] at ([yshift=0.3\textwidth]current page.south)
+   {\LARGE\CJKfontspec{华文行楷}哈尔滨工业大学出版社\\
+   \bfseries HARBIN INSTITUTE OF TECHNOLOGY PRESS
+   };
+
+
+\end{tikzpicture} 

@@ -1,0 +1,1163 @@
+\chapter{实分析}
+\section{基础微积分}
+\begin{example}
+  证明: $(\cos\theta)^p\le\cos(p\theta)$对$0\le\theta\le\pi/2,0<p<1$成立
+\end{example}
+
+\begin{example}
+  设$f:[0,1]\to\MR$连续可微， 且$f(0)=0$. 证明:
+  \[
+    \sup_{0\le x\le1}|f(x)| \le\sqrt{\int_0^1\big(f'(x)\big)^2\,\dx}.
+  \]
+\end{example}
+
+\begin{example}
+  设$f(x)$是定义在$[1,+\infty)$上的实值函数，满足$f(1)=1$且
+  \[ f'(x)=\frac1{x^2+f^2(x)}. \]
+  证明:
+  \[ \lim_{x\to+\infty}f(x) \]
+  存在，且小于$1+\pi/4$.
+\end{example}
+
+\begin{example}
+  设$f,g:[0,1]\to[0,+\infty)$是连续函数，且满足
+  \[ \sup_{0\le x\le1}f(x)=\sup_{0\le x\le 1}g(x). \]
+  证明: 存在$t\in[0,1]$使得$f^2(t)+2f(t)=g^2(t)+3g(t)$.
+\end{example}
+
+\begin{example}
+  对实轴上的实值函数$f$，定义函数$\Delta f=f(x+1)-f(x)$. 对$n\ge2$，归纳定义$\Delta^nf=\Delta(\Delta^{n-1}f)$. 证明: $\Delta^nf=0$当且仅当$f$具有形式$f(x)=a_0(x)+a_1(x)x+\cdots+a_{n-1}(x)x^{n-1}$，其中$a_0,a_1,\cdots,a_{n-1}$均是周期为$1$的周期函数.
+\end{example}
+
+\begin{example}
+  设$f:\MR\to\MR$是一个非常值的函数，满足$x\le y$时$f(x)\le f(y)$. 证明: 存在$a\in\MR$和$c>0$，使得对任意$x\in[0,1]$有$f(a+x)-f(a-x)\ge cx$.
+\end{example}
+
+\begin{example}
+  证明或否定（给反例）以下每一个论述:
+  \begin{eenum}
+    \item 设$f:\MR\to\MR,g:\MR\to\MR$满足
+    \[\lim_{t\to a}g(t)=b\quad \text{且}\quad \lim_{t\to b}
+    f(t)=c.\]
+    则
+    \[ \lim_{t\to a}f\big(g(t)\big)=c. \]
+    \item 如果$f:\MR\to\MR$是连续函数， $U$是$\MR$中的一个开集，则$f(U)$也是$\MR$中的开集.
+    \item 设$f$是区间$(-1,1)$内的$C^\infty$函数. 假定对任意$n\ge1$和$x\in(-1,1)$，均有$|f^{(n)}|\le1$，则$f$是实解析的: 即它在此区间内任意一点的邻域内都有收敛的幂级数展开式.
+  \end{eenum}
+\end{example}
+
+\begin{example}
+  证明: 对任意$x>0$有$\sin x>x-x^3/6$.
+\end{example}
+
+\begin{example}
+  设
+  \[ y(h)=1-2\sin^2(2\pi h),\quad f(y)=\frac2{1+\sqrt{1-y}}. \]
+  证明论断:
+  \[f\big(y(h)\big) = 2 - 4\sqrt2\pi|h| + O(h^2),\quad h\to0,\]
+  这里
+  \[ \limsup_{h\to0}\frac{O(h^2)}{h^2} < +\infty. \]
+\end{example}
+
+\begin{example}
+  \begin{enuma}
+    \item 证明: 不存在从闭区间$[0,1]$到开区间$(0,1)$的连续映射.
+    \item 给出一个从开区间$(0,1)$到闭区间$[0,1]$的满射.
+    \item 证明: 第 \ref{\theexample.2} 部分中的映射不可能是双射.
+  \end{enuma}
+\end{example}
+
+\begin{example}
+  设$f$是一个二次可微的实值函数，满足对任意$x\in[a,b]$均有$f''(x)>0$. 求出所有的$c\in[a,b]$，使得由曲线$y=f(x)$及其在点$\big(c,f(c)\big)$ 处的切线，以及直线$x=a,x=b$所围成的区域面积最小.
+\end{example}
+
+\begin{example}
+  求出所有内接于半轴长分别为$a$和$b$的椭圆的三角形面积的最大值，并描述面积最大的三角形.
+  \begin{note}
+    也参见问题 \ref{ex2.2.2}.
+  \end{note}
+\end{example}
+
+\begin{example}
+  设$f$是$[0,+\infty)$上的连续实值函数. 设$A$表示那些可以写成$a=\lim_{n\to+\infty}f(x_n)$的实数$a$的集合，这里$(x_n)$是某个$[0,+\infty)$上的序列，且满足$\lim_{n\to+\infty}x_n=+\infty$. 证明: 如果$A$包含数$a$和$b$，则$A$包含以$a,b$为端点的整个区间.
+\end{example}
+
+\begin{example}
+  证明: 对每个充分小的$\varepsilon>0$，方程
+  \[ x\bigg( 1+\ln \Big( \frac1{\varepsilon\sqrt x} \Big) \bigg)
+  =1,\quad x>0,\quad \varepsilon>0 \]
+  恰有两个解. 设$x(\varepsilon)$是其中较小的一个解，证明:
+  \begin{eenum}
+    \item 当$\varepsilon\to0^+$时， $x(\varepsilon)\to0$;
+    \item 对任意$x>0$，当$\varepsilon\to0^+$时， $\varepsilon^ {-s}x(\varepsilon)\to+\infty$.
+  \end{eenum}
+\end{example}
+
+\begin{example}
+  设$f(x)$是一个实系数多项式， $a$是一个实数，且$f(a)\ne0$. 证明: 存在一个实多项式$g(x)$，使得如果我们定义$p(x)=f(x)g(x)$，则我们有$p(a)=1,p'(a)=0$，且$p''(a)=0$.
+\end{example}
+
+\begin{example}
+  设$p(z)$是一个非常值的实系数多项式，满足对某个实数$a$有$p(a)\ne0$，当$p'(a)=p''(a)=0$. 证明: 方程$p(z)=0$有一个非实数的根.
+\end{example}
+
+\begin{example}
+  设$f$是实轴上的$C^2$函数. 假定$f$有界，且二阶导数也有界. 令
+  \[ A=\sup_{x\in\MR}|f(x)|,\quad B=\sup_{x\in\MR}|f''(x)|. \]
+  证明:
+  \[ \sup_{x\in\MR}|f'(x)|\le 2\sqrt{AB}. \]
+\end{example}
+
+\begin{example}
+  求出所有满足$0<a<b$，且$a^b=b^a$的整数对.
+\end{example}
+
+\begin{example}
+  对怎样的正数$a,b$，其中$a>1$，关于$x$的方程$\log_ax=x^b$有正数解.
+\end{example}
+
+\begin{example}
+  $\pi^3$和$3^\pi$哪一个大?
+\end{example}
+
+\begin{example}
+  对怎样的数$a\in(1,+\infty)$，使得对任意$x\in(1,+\infty)$均有$x^a\le a^x$?
+\end{example}
+
+\begin{example}
+  证明: 正数$t$能满足
+  \[ \ee^x>x^t,\quad \forall x>0 \]
+  当且仅当$t<\ee$.
+\end{example}
+
+\begin{example}
+  设$f(x)$定义在$[-1,1]$上，且$f'''(x)$连续. 证明: 级数
+  \[
+    \sum_{n=1}^{\infty}\bigg(
+      n\Big( f\Big(\frac1n\Big)-f\Big(-\frac1n\Big) \Big)
+      -2f'(0)
+    \bigg)
+  \]
+  收敛.
+\end{example}
+
+\begin{example}
+  如果$f$是一个开区间上的$C^2$函数，证明:
+  \[
+    \lim_{h\to0}\frac{f(x+h)-2f(x)+f(x-h)}{h^2}=f''(x).
+  \]
+\end{example}
+
+
+
+\begin{example}
+\begin{enuma}
+  \item 对$0\le\theta\le\pi/2$，证明:
+\end{enuma}
+    \[ \sin\theta\ge\frac2\pi\theta. \]
+\begin{eenum}\setcounter{enumi}{1}
+  \item 根据第  \ref{1.1.25.1} 部分，或者通过其他任何方法，证明: 如果$\lambda<1$，则
+\end{eenum}
+\[ \lim_{R\to+\infty}R^\lambda\int_0^{\frac\pi2}\ee^{-R\sin\theta}\mathrm d\theta=0. \]
+\end{example}
+
+\begin{example}
+  设$f:\MR\to\MR$连续，假定$\MR$包含一个可数的无穷子集$S$，使得如果$p,q$不在$S$中，则
+    \[ \int_p^qf(x)\,\dx=0. \]
+  证明: $f$恒为0.
+\end{example}
+
+\begin{example}
+  设函数$f:[0,1]\to[0,1]$满足
+  \begin{itemize}
+    \item $f$是$C^1$类；
+    \item $f(0)=f(1)=0$;
+    \item $f'$是非递增的（即$f$是凹的）.
+  \end{itemize}
+  证明: $f$的图像的弧长不超过3.
+\end{example}
+
+\begin{example}
+  设$f$是$[0,+\infty)$上的实值$C^1$函数，满足反常积分$\int_1^{+\infty}|f'(x)|\,\dx$收敛. 证明: 无穷级数$\sum_{n=1}^{\infty} f(n)$收敛当且仅当积分$\int_1^{+\infty} f(x)\,\dx$收敛.
+\end{example}
+
+\begin{example}
+  设$E$是由所有满足
+   \[ |u(x)-u(y)|\le|x-y|,\quad 0\le x,y\le1,\quad u(0)=0 \]
+  的连续实值函数$u:[0,1]\to\MR$构成的集合. 设$\varphi:E\to\MR$定义为
+   \[ \varphi(u)=\int_0^1\Big(u^2(x)-u(x)\Big)\,\dx. \]
+  证明: $\varphi$在$E$中的某个元素取到其最大值.
+\end{example}
+
+\begin{example}
+  设$S$是$[0,1]$上所有满足$f(0)=0$，且
+   \[ \int_0^1[f'(x)]^2\,\dx \le 1 \]
+  的$C^1$函数$f$构成的集合. 定义
+   \[ J(f) = \int_0^1f(x)\,\dx. \]
+   证明: 函数$J$在$S$上有界，并求出其上确界. 是否存在函数$f_0\in S$使得$J$在$f_0$取得其最大值? 如果存在， $f_0$是什么?
+\end{example}
+
+\begin{example}
+  设$f$是$[0,1]$上的一个实值的连续、非负的函数，且满足
+  \[ f^2(t)\le 1+2\int_0^tf(s)\,\mathrm ds \]
+  对$t\in[0,1]$成立. 证明: $f(t)\le1+t,t\in[0,1]$.
+\end{example}
+
+\begin{example}
+  设$\varphi$是$\MR$上的一个$C^1$函数，满足当$x\to+\infty$时，
+  \[ \varphi(x)\to a\quad \text{且}\quad \varphi'(x)\to b. \]
+  证明或者给出反例: $b$一定为0.
+\end{example}
+
+\begin{example}
+  证明:
+  \[ F(k) = \int_0^{\frac\pi2}\frac{\dx}{\sqrt{1-k\cos^2x}},\quad 0\le k<1 \]
+  是$k$的递增函数.
+\end{example}
+
+\begin{example}
+  给定
+  \[ \int_{-\infty}^{+\infty}\ee^{-x^2}\dx=\sqrt\pi, \]
+  求出$f'(t)$的直接表达式，这里
+  \[ f(t)= \int_{-\infty}^{+\infty}\ee^{-tx^2}\dx,\quad t>0.\]
+\end{example}
+
+\begin{example}
+  定义
+  \[ F(x)=\int_{\sin x}^{\cos x}\ee^{t^2+xt}\mathrm dt. \]
+  计算$F'(0)$.
+\end{example}
+
+\begin{example}
+  设$f:\MR\to\MR$是一个非零的$C^\infty$函数，满足对任意$x,y$有
+  \[ f(x)f(y)=f\Big(\sqrt{x^2+y^2}\Big). \]
+  且当$|x|\to+\infty$时， $f(x)\to0$.
+  \begin{eenum}
+    \item 证明: $f$是一个偶函数，且$f(0)=1$.
+    \item 证明: $f$满足微分方程$f'(x)=f''(0)xf(x)$，并求出满足给定条件的一般函数.
+  \end{eenum}
+\end{example}
+
+\begin{example}
+  设$S$是由所有在$[0,1]$上满足在有理点处取有理数值的连续实值函数$f(x)$构成的集合, 证明: $S$是不可数的.
+\end{example}
+
+\section{极限与连续}
+\begin{example}
+  设$f$是$\MR^2$上有界的，连续的，实值函数. 在$\MR$上定义函数$g$:
+  \[ g(x)=\int_{-\infty}^{+\infty}\frac{f(x,t)}{1+t^2}\,\mathrm dt.\]
+  证明: $g$是连续的.
+\end{example}
+
+\begin{example}
+  设$f$将紧区间$I$映到自己，且满足
+  \[ |f(x)-f(y)|<|x-y|,\quad \forall x,y\in I,x\ne y. \]
+  是否存在常数$M<1$，使得对$\forall x,y\in I$，有
+  \[ |f(x,y)| \le M|x-y|. \]
+\end{example}
+
+\begin{example}
+  设$[0,1]$上的实值函数$f$满足以下两条性质:
+  \begin{itemize}
+    \item 如果$[a,b]\subset[0,1]$，则$f([a,b])$包含以$f(a)$和$f(b)$为端点的区间（即$f$具有介值性）.
+    \item 对每个$c\in\MR$，集合$f^{-1}(c)$是闭的.
+  \end{itemize}
+  证明: $f$是连续的.
+\end{example}
+
+\begin{example}
+  设$f:\MR\to\MR$一致连续，且$f(0)=0$. 证明: 存在正数$B$使得$|f(x)|\le1+B|x|$对任意$x$成立.
+\end{example}
+
+\begin{example}
+  设$f$是$\MR$上以1为周期的周期函数，即$f(x+1)=f(x)$. 证明:
+  \begin{eenum}
+    \item 函数$f$是有上下界的，且能取到其最大值和最小值.
+    \item 函数$f$在$\MR$上一致连续.
+    \item 存在实数$x_0$，使得
+      \[ f(x_0+\pi) = f(x_0). \]
+  \end{eenum}
+\end{example}
+
+\begin{example}
+  设$h:[0,1)\to\MR$是定义在半开半闭区间$[0,1)$上的函数. 证明: 如果$h$是一致连续的，则存在唯一的连续函数$g:[0,1]\to\MR$，使得$g(x)=h(x),\forall x\in[0,1)$.
+\end{example}
+
+\begin{example}
+  设$f$是$[0,+\infty)$上的实值连续函数，且$\lim_{x\to+\infty}f(x)$存在（有限）. 证明: $f$是一致连续的.
+\end{example}
+
+\begin{example}
+  证明或给出反例: 如果函数$f:\MR\to\MR$在$\MR$的每一点均存在左右极限，则$f$的不连续点的集合是至多可数的.
+\end{example}
+
+\begin{example}
+  设$f:\MR\to\MR$满足$f(x)\le f(y),\forall x\le y$. 证明: $f$的不连续点的集合是有限的或无限可数的.
+\end{example}
+
+\begin{example}
+  函数$f:[0,1]\to\MR$称为是上半连续的是指: 如果给定$x\in[0,1]$和$\varepsilon>0$，存在一个$\delta>0$，使得当$|y-x|<\delta$时， $f(y)<f(x)+\varepsilon$. 证明: $[0,1]$上的一个上半连续的函数$f$是有上界的，并且在某个$p\in[0,1]$处取到其最大值.
+\end{example}
+
+\begin{example}
+  证明: 一个从$\MR$映到$\MR$的函数如果将开集映为开集，则它必定是单调的.
+\end{example}
+
+\begin{example}
+  设$f:\MR\to\MR$是连续函数，且满足$|f(x)-f(y)|\ge|x-y|$对任意$x,y$成立. 证明: $f$的值域就是$\MR$.
+\end{example}
+\begin{note}
+  也参见问题 \ref{ex2.1.8}.
+\end{note}
+
+\begin{example}
+  设$f$是$[0,1]$上的连续函数，求下列极限:
+  \begin{eenum}
+    \item
+    \[ \lim_{n\to\infty}\int_0^1x^nf(x)\,\dx. \]
+    \item
+    \[ \lim_{n\to\infty}n\int_0^1x^nf(x)\,\dx. \]
+  \end{eenum}
+\end{example}
+
+\begin{example}
+  设函数$f$将$[0,1]$映到$[0,1]$，其图像
+  \[ G_f=\{(x,f(x))|x\in[0,1]\} \]
+  是单位正方形的闭子集. 证明: $f$是连续的.
+\end{example}
+
+\begin{example}
+  设$f$是定义在$[0,1]\times[0,1]$上的实值连续函数，设$[0,1]$上的函数$g$定义为
+  \[ g(x)=\max\{f(x,y)|y\in[0,1]\}. \]
+  证明: $g$是连续的.
+\end{example}
+
+\begin{example}
+  设函数$f:\MR\to\MR$在有界集上是有界的，且满足当$K$为紧集时，$f^{-1}(K)$是闭集. 证明: $f$是连续的.
+\end{example}
+
+\section{数列、级数与无穷乘积}
+\begin{example}
+  设$A_\ge A_2\ge\cdots\ge A_k\ge0$，计算
+  \[ \lim_{n\to\infty}\big(
+   A_1^n+A_2^n+\cdots+A_k^n
+  \big)^{1/n}. \]
+\end{example}
+\begin{note}
+  也参见问题 \ref{ex5.1.11}.
+\end{note}
+
+\begin{example}
+  计算
+  \[ L=\lim_{n\to\infty}\Big(\frac{n^n}{n!}\Big)^{1/n}. \]
+\end{example}
+
+\begin{example}
+  设$x_0=1$，且
+  \[ x_{n+1} = \frac{3+2x_n}{3+x_n},\quad n\ge0. \]
+  证明: $x_\infty=\lim_{n\to\infty}x_n$存在，并求其值.
+\end{example}
+
+\begin{example}
+  定义实数列$(x_n)$:
+  \[ x_0=1,\quad x_{n+1}=\frac1{2+x_n},n\ge0. \]
+  证明: $(x_n)$收敛，并求其极限.
+\end{example}
+
+\begin{example}
+  设$\alpha\in(0,1)$. 证明: 任意满足递推关系
+  \[ x_{n+1}=\alpha x_n+(1-\alpha)x_{n-1} \]
+  的实数列$(x_n)$闭存在极限，并用$\alpha,x_0,x_1$求出此极限的一个表达式.
+\end{example}
+
+\begin{example}
+  设$k$是一个正整数. 求出所有的实数$c$，使得每个满足递推式
+  \[ \frac12(x_{n+1}+x_{n-1}) = c_n \]
+  的实数列$(x_n)$均以$k$为周期（即$x_{n+k}=x_n,\forall n$）.
+\end{example}
+
+\begin{example}
+  设$a$是一个正实数. 定义数列$(x_n)$:
+  \[ x_0=0,\quad x_{n+1}=a+x_n^2,n\ge0. \]
+  求出关于$a$的充分必要条件，使得极限$\lim_{n\to\infty}x_n$存在（有限）.
+\end{example}
+
+\begin{example}
+  设$(x_n)$是实数列，且
+  \[ \lim_{n\to\infty}(2x_{n+1}-x_n)=x. \]
+  证明: $\lim_{n\to\infty}x_n=x$.
+\end{example}
+
+\begin{example}
+  设$a$和$x_0$都是正数，递推定义数列$(x_n)_{n=1}^\infty$:
+  \[ x_n=\frac12\Big( x_{n-1}+\frac a{x_{n-1}} \Big). \]
+  证明此数列收敛，并求其极限.
+\end{example}
+
+\begin{example}
+  设实数$x_1\in(0,1)$，递推定义数列$x_{n+1}=x_n-x_n^{n+1}$. 证明: $\liminf\limits_{n\to\infty}x_n>0$.
+\end{example}
+
+\begin{example}
+  设$f(x)=1/4+x-x^2$. 对任意实数$x$，定义数列$(x_n)$: $x_0=x,x_{n+1}=f(x_n)$. 如果此数列收敛，用$x_\infty$表示其极限.
+  \begin{eenum}
+    \item 对$x=0$，证明此数列是有界且非递减的，并求出$x_\infty=\lambda$.
+    \item 求出所有的$x\in\MR$，使得$x_\infty=\lambda$.
+  \end{eenum}
+\end{example}
+
+\begin{example}
+  Fibonacci数列$f_1,f_2,\cdots$递推定义为: $f_1=1,f_2=2$，且$f_{n+1}=f_n+f_{n-1},n\ge2$. 证明:
+  \[ \lim_{n\to\infty}\frac{f_{n+1}}{f_n} \]
+  存在，并求出此极限.
+\end{example}
+\begin{note}
+  也参见问题 \ref{ex7.5.20}.
+\end{note}
+
+\begin{example}
+  证明:
+  \[ \lim_{n\to\infty}\Big(
+   \frac1{n+1}+\frac1{n+2}+\cdots+\frac1{2n}  \Big) = \ln2.
+ \]
+\end{example}
+
+\begin{example}
+  对正整数$n$，设$H_n$表示调和级数的第$n$个部分和:
+  \[ H_n=\sum_{j=1}^n\frac1j. \]
+  设整数$k>1$， 证明:
+  \[ \ln k-\frac Cn<H_{nk}-H_n<\ln k,\quad(n=1,2,\cdots) ,\]
+  这里$\ln k$是$k$的自然对数，而$C$是一个常数.
+\end{example}
+
+\begin{example}
+  设$x_1,x_2,x_3,\cdots$是一列非负实数，且满足
+  \[ x_{n+1}\le x_n+\frac1{n^2},\forall n\ge1. \]
+  证明: $\lim_{n\to\infty}x_n$存在.
+\end{example}
+
+\begin{example}
+  设$(a_n)$和$(\varepsilon_n)$都是正实数列. 假定$\lim_{n\to\infty}\varepsilon_n=0$，且存在常数$k\in(0,1)$，使得$a_{n+1}\le ka_n+\varepsilon_n$对所有$n$成立，证明: $\lim_{n\to\infty}a_n=0$.
+\end{example}
+
+\begin{example}
+  证明或否定（通过给反例）以下断言: 每个无穷实数列$x_1,x_2,\cdots$都有一个非递减或非递增的子列.
+\end{example}
+
+\begin{example}
+  设$b_1,b_2,\cdots$是正实数，且满足
+  \[ \lim_{n\to\infty}b_n=+\infty\quad\text{且} \lim_{n\to\infty}(b_n/b_{n+1})=1.  \]
+  还假定$b_1<b_2<b_3<\cdots$. 证明: 比值$(b_m/b_n)_{1\le n<m}$的集合在$(1,+\infty)$内稠密.
+\end{example}
+
+\begin{example}
+  以下哪个级数是收敛的?
+  \begin{eenum}
+    \item
+    \[
+      \sum_{n=1}^\infty\frac{(2n)!(3n)!}{n!(4n)!}.
+    \]
+    \item
+    \[
+      \sum_{n=1}^\infty\frac1{n^{1+1/n}}.
+    \]
+  \end{eenum}
+\end{example}
+
+\begin{example}
+  设$a_1,a_2,a_3,\cdots$是正数.
+  \begin{eenum}
+    \item 证明: $\sum_{n=1}^\infty a_n<+\infty$意味着$\sum_{n=1}^\infty\sqrt{a_na_{n+1}}<+\infty$.
+    \item 证明以上命题的逆命题是错的.
+  \end{eenum}
+\end{example}
+
+\begin{example}
+  对每个$(a,b,c)\in\MR^3$，考虑级数
+  \[ \sum_{n=3}^\infty\frac{a^n}{n^b\ln^cn}. \]
+  求出$(a,b,c)$的取值，使得此级数
+  \begin{eenum}
+    \item 绝对收敛;
+    \item 收敛但不绝对收敛;
+    \item 发散.
+  \end{eenum}
+\end{example}
+
+\begin{example}
+  对怎样的实数$x$，级数
+  \[ \sum_{n=1}^\infty\frac{\sqrt{n+1}-\sqrt n}{n^x} \]
+  是收敛的?
+\end{example}
+
+\begin{example}
+  对怎样的实数$a$，级数
+  \[ \sum_{n=1}^\infty\Big(\frac1n-\sin\frac1n\Big)^a \]
+  是收敛的?
+\end{example}
+
+\begin{example}
+  设$A$表示十进制数码中不含$9$的正整数的集合，证明:
+  \[ \sum_{a\in A}\frac1a<+\infty, \]
+  也就是说，$A$定义了调和级数的一个收敛的子级数.
+\end{example}
+
+\begin{example}
+  设$a_1,a_2,\cdots$是正数，且满足
+  \[ \sum_{n=1}^\infty a_n<+\infty. \]
+  证明: 存在正数$c_1,c_2,\cdots$使得
+  \[ \lim_{n\to\infty}c_n=+\infty\quad\text{且}\quad
+  \sum_{n=1}^\infty c_na_n<+\infty. \]
+\end{example}
+
+\begin{example}
+  计算极限
+  \[ \lim_{n\to\infty}\cos\frac\pi{2^2}\cos
+  \frac\pi{2^3}\cdots\cos\frac\pi{2^n}. \]
+\end{example}
+
+\section{微分学}
+\begin{example}
+  设$f(x)=x\log(1+x^{-1}),0<x<+\infty$.
+  \begin{eenum}
+    \item 证明: $f$是严格单调递增的.
+    \item 计算当$x\to0$和$x\to+\infty$时$f(x)$的极限.
+  \end{eenum}
+\end{example}
+
+\begin{example}
+  设$f(x),0\le x<+\infty$可微，且$f(0)=0$， $f'(x)$在$x\ge0$时是单调递增的. 证明:
+  \[ g(x)=\begin{cases}
+    f(x)/x, & x>0\\
+    f'(0),  & x=0
+  \end{cases}. \]
+  是$x$的增函数.
+\end{example}
+
+\begin{example}
+  \begin{enuma}
+   \item 给出一个可微函数的例子$f:\MR\to\MR$，使得其导数$f'$是不连续的.
+   \item 设$f$如 \ref{1.4.3.1} 部分所述. 如果$f'(0)<2<f'(1)$，证明: 存在$x\in[0,1]$，使得$f'(x)=2$.
+  \end{enuma}
+\end{example}
+
+\begin{example}
+  设$y:\MR\to\MR$是$C^\infty$函数，且满足微分方程
+  \[ y''+y'-y=0,x\in[0,L], \]
+  这里$L$是一个正的实数. 假定$y(0)=y(L)=0$，证明: 在$[0,L]$上，$y\equiv0$.
+\end{example}
+
+\begin{example}
+  设$u(x),0\le x\le 1$是一个实值的$C^2$函数，且满足微分方程
+  \[ u''(x)=\ee^x u(x). \]
+  \begin{eenum}
+    \item 证明: 如果$0<x_0<1$，则$u$不可能在$x_0$处有正的局部极大值. 类似地，证明$u$在$x_0$处不可能有负的局部极小值.
+    \item 现在假定$u(0)=u(1)=0$，证明: $u(x)\equiv0,0\le x\le1$.
+  \end{eenum}
+\end{example}
+
+\begin{example}
+  设$K$是一个实常数. 假定$y(t)$是一个正的可微函数，且满足$y'(t)\le Ky(t),\forall t\ge0$. 证明: $y(t)\le \ee^{Kt}y(0),\forall t\ge0$.
+\end{example}
+
+\begin{example}
+  设$f:\MR\to\MR$是一个可微函数，假定$f'(x)>f(x),\forall x\in\MR$，且$f(x_0)=0$. 证明: $f(x)>0,\forall x>x_0$.
+\end{example}
+
+\begin{example}
+  设$f$是$\MR$上的一个二次可微的实值函数，满足$f(0)=0,f'(0)>0$，且$f''(x)\ge f(x),\forall x\ge0$. 证明: $f(x)>0,\forall x>0$.
+\end{example}
+
+\begin{example}
+  设$a$是一个正的常数，证明: 方程$a\ee^x=1+x+x^2/2$恰有一个实根.
+\end{example}
+
+\begin{example}
+  设函数$f:[0,1]\to\MR$连续，满足$f(0)=0$，对$0<x<1$， $f$是可微的，且$0\le f'(x)\le2f(x)$. 证明: $f$恒等于0.
+\end{example}
+
+\begin{example}
+  设$f:[0,1]\to\MR$是连续函数，满足$f(0)=f(1)=0$. 假定$f''$在$0<x<1$时存在，且$f''+2f'+f\ge0$. 证明: $f(x)\le0,\forall x\in[0,1]$.
+\end{example}
+
+\begin{example}
+  设$v_1$和$v_2$是$\MR$上得了两个实值的连续函数，满足$v_1(x)<v_2(x),\forall x\in\MR$. 令$\varphi_1(t)$和$\varphi_2(t)$分别表示方程
+  \[ \dd xt=v_1(x)\quad \text{和}\quad \dd xt=v_2(x) \]
+  在$a<t<b$时的解. 如果$\varphi_1(t_0)=\varphi_2(t_0)$对某个$t_0\in(a,b)$成立，证明: 对任意$t\in(t_0,b)$有$\varphi_1(t)\le\varphi_2(t)$.
+\end{example}
+
+\begin{example}
+  证明或给出反例: 如果$f$和$g$是$(0,1)$上的实值函数，满足
+  \[ \lim_{x\to0}g(x) = \lim_{x\to0}g(x)=0, \]
+  且$g$和$g'$恒不为零，若
+  \[ \lim_{x\to0}\frac{f(x)}{g(x)}=c, \]
+  则
+  \[ \lim_{x\to0}\frac{f'(x)}{g'(x)}=c. \]
+\end{example}
+
+\begin{example}
+  设$f$是$(-1,1)$上的实值可微函数，满足当$x\to0$时，$f(x)/x^2$存在有限的极限，这是否意味着$f''(0)$存在? 给出证明或反例.
+\end{example}
+
+\begin{example}
+  设$f:\MR\to\MR$是一个无穷次可微函数，假定对某个正整数$n$有
+  \[ f(1)=f(0)=f'(0)=f''(0)=\cdots=f^{(n)}(0)=0, \]
+  证明: 存在某个$x\in(0,1)$，使得$f^{(n+1)}(x)=0$.
+\end{example}
+
+\begin{example}
+  设$f$是$(0,+\infty)$上正的$C^2$函数，满足$f'\le0$且$f''$有界. 证明: $\lim_{t\to+\infty}f'(t)=0$.
+\end{example}
+
+\begin{example}
+  设$f$是$(0,+\infty)$上正的可微函数，证明:
+  \[ \lim_{\delta\to0} \Big( \frac{f(x+\delta x)}{f(x)} \Big)^{1/\delta}
+  \]
+  对每个$x$存在（有限）且非零.
+\end{example}
+
+\begin{example}
+  设$f(x),-\infty<x<+\infty$，是连续的实值函数，满足对$\forall x\ne0$， $f'(x)$都存在，且$\lim_{x\to0}f'(x)$存在. 证明: $f'(0)$存在.
+\end{example}
+
+\begin{example}
+  对每个实参数$t$，求出三次多项式$p_t(x)=(1+t^2)x^3-3t^3x+t^4$的实根数目及其重数.
+\end{example}
+
+\begin{example}
+  设实值函数$f$定义在实轴上一个包含$a$的开区间上，且在$a$处可微. 证明: 如果$(x_n)$和$(y_n)$分别是$f$的定义域上的递增数列和递减数列，并且都收敛于$a$，则
+  \[ \lim_{n\to\infty}\frac{f(y_n)-f(x_n)}{y_n-x_n} = f'(a). \]
+\end{example}
+
+\begin{example}
+  设$f$是$[0,1]$上连续的实值函数，满足对每个$x_0\in[0,1)$有
+  \[ \limsup_{x\to x_0^+} \frac{f(x)-f(x_0)}{x-x_0}\ge0. \]
+  证明: $f$是非递减的.
+\end{example}
+
+\begin{example}
+  设$I$是$\MR$上一个包含0的开区间，假定$f'$在0的某个邻域内存在，且$f''(0)$存在. 证明:
+  \[ f(x)=f'(0)\sin x+\frac12f''(0)\sin^2x+o(x^2). \]
+  （$o(x^2)$表示当$x\to0$时，$o(x^2)/x^2\to0$.）
+\end{example}
+
+\begin{example}
+  证明: 函数
+  \[f(z)=\frac z{\ee^z-1}\]
+  在$x=0$处的Taylor系数都是有理数.
+\end{example}
+
+\begin{example}
+  给出一个具有以下三条性质的函数$f:\MR\to\MR$:
+  \begin{itemize}
+    \item 对$x<0$和$x>2$，有$f(x)=0$;
+    \item $f'(1)=1$;
+    \item $f$具有任意阶导数.
+  \end{itemize}
+\end{example}
+
+\begin{example}
+  证明: 如果$n$是一个正整数，$\alpha,\varepsilon$是实数且$\varepsilon>0$，则存在一个任意阶可导的函数实函数$f$，满足
+  \begin{enumerate}
+    \item $|f^{(k)}(x)|\le \varepsilon,k=0,1,\cdots,n-1,\forall x\in\MR$;
+    \item $f^{(k)}(0)=0,k=0,1,\cdots,n-1$;
+    \item $f^{(n)}(0)=\alpha$.
+  \end{enumerate}
+\end{example}
+
+\begin{example}
+  设$f:\MR\to\MR$是连续可微的，且以1为周期的非负周期函数. 证明:
+  \[ \dd{}x\Big( \frac{f(x)}{1+cf(x)} \Big) \]
+  当$c\to+\infty$时，关于$x$一致趋于0.
+\end{example}
+
+\begin{example}
+  令$I$表示开区间$(0,1)$，设$f:I\to\MC$是$C^1$函数（即其实部和虚部分别连续可微）.假定当$t\to0^+$时，$f(t)\to0,f'(t)\to C\ne0$. 证明: 函数$g(t)=|f(t)|$对充分小的$t>0$是$C^1$的，且$\lim_{t\to0^+}g'(t)$存在，并求出此极限.
+\end{example}
+
+\begin{example}
+  设$f:\MR\to\MR$是一个$C^\infty$函数，假定$f(x)$在$x=0$处存在一个局部极小值. 证明: 存在一个圆心在$y$上的圆盘，它在$f$的图像上方，且经过点$\big(0,f(0)\big)$.
+\end{example}
+
+\section{积分学}
+\begin{example}
+  设$f$是$[a,b]$上的实值函数，假定$f$可微且$f'$ 是Riemann 可积的，证明:
+  \[ \int_a^bf(x)\,\dx = f(b)-f(a). \]
+\end{example}
+
+\begin{example}
+  利用Riemann积分的性质证明: 如果$f$是$[0,1]$上的非负连续函数，且$\int_0^1f(x)\,\dx=0$，则$f(x)=0,\forall x\in[0,1]$.
+\end{example}
+
+\begin{example}
+  设$f$是连续的实值函数，证明: 存在$\xi\in[0,1]$，使得
+  \[ \int_0^1f(x)x^2\,\dx = \frac13f(\xi). \]
+\end{example}
+
+\begin{example}
+  设$f$是一元实值函数，满足
+  \[ \lim_{x\to c}f(x) \]
+  对任意$x\in[a,b]$均存在. 证明: $f$在$[a,b]$上Riemann可积.
+\end{example}
+
+\begin{example}
+  设$f:[0,1]\to\MR$，对任意$b\in(0,1)$，$f$在$[b,1]$上可积.
+  \begin{eenum}
+    \item 如果$f$有界，证明: $f$在$[0,1]$上可积.
+    \item 如果$f$无界呢?
+  \end{eenum}
+\end{example}
+
+\begin{example}
+  设$f:\MR\to\MR$连续，满足
+   \[ \int_{-\infty}^{+\infty}|f(x)|\,\dx < +\infty. \]
+  证明: 存在序列$(x_n)$满足当$n\to\infty$时，$x_n\to+\infty,x_nf(x_n)\to0$，且$x_nf(-x_n)\to0$.
+\end{example}
+
+\begin{example}
+  令
+  \[ f(x)=\ee^{x^2/2}\int_x^{+\infty}\ee^{-t^2/2}\,\mathrm dt,\,x>0. \]
+  \begin{eenum}
+    \item 证明: $0<f(x)<1/x$.
+    \item 证明: $f(x)$在$x>0$时严格递增.
+  \end{eenum}
+\end{example}
+
+\begin{example}
+  设$\varphi(s)$是$[1,2]$上的$C^2$函数，且$\varphi$和$\varphi'$在$s=1,2$处均为0. 证明: 存在常数$C>0$，使得对任意$\lambda>1$，有
+  \[ \bigg| \int_1^2\ee^{\ii\lambda x}\varphi(x)\,\dx \bigg|
+  \le\frac C{\lambda^2}. \]
+\end{example}
+
+\begin{example}
+  给定$a\in[0,1]$，求出$[0,1]$上的所有非负连续函数$f$，使得其满足如下三个条件:
+  \begin{gather*}
+    \int_0^1f(x)\,\dx = 1,\\
+    \int_0^1xf(x)\,\dx = a, \\
+    \int_0^1x^2f(x)\,\dx = a^2.
+  \end{gather*}
+\end{example}
+
+\begin{example}
+  设$f$是$[0,1]$上的可微函数，且满足
+    \[ \sup_{0<x<1}|f'(x)| = M < +\infty. \]
+  对任意正整数$n$，证明:
+  \[
+    \bigg| \sum_{j=0}^{n-1}\frac{f(j/n)}n -
+    \int_0^1f(x)\,\dx \bigg| \le \frac M{2n}.
+  \]
+\end{example}
+
+\begin{example}
+  设$f:[0,+\infty)\to\MR$是一致连续函数，且
+   \[ \lim_{b\to+\infty}\int_0^bf(x)\,\dx \]
+  存在（有限）. 证明:
+   \[ \lim_{x\to+\infty}f(x)=0. \]
+\end{example}
+
+\begin{example}
+  设$f$是$[0,+\infty)$上的实值连续函数，且
+  \[ \lim_{x\to+\infty}\bigg( f(x)+\int_0^xf(t)\,\mathrm dt \bigg) \]
+  存在. 证明:
+  \[ \lim_{x\to+\infty}f(x) = 0. \]
+\end{example}
+
+\begin{example}
+  设$f:\MR_+\to\MR_+$是定义在正实数集上的单调递减函数，满足
+  \[ \int_0^{+\infty}f(x)\,\dx < +\infty. \]
+  证明:
+  \[ \lim_{x\to+\infty}xf(x) = 0. \]
+\end{example}
+
+\begin{example}
+  设$f$是连续的实值函数，满足$f(x)\ge0$对任意$x$成立，且
+  \[ \int_0^{+\infty}f(x)\,\dx < +\infty. \]
+  证明: 当$n\to\infty$时，
+  \[ \frac1n\int_0^nxf(x)\,\dx \to 0. \]
+\end{example}
+
+\begin{example}
+  求积分
+  \[ I=\int_0^{\frac12}\frac{\sin x}x\,\dx \]
+  的近似值，保证前两位小数的精确度，即求出数$I^\ast$，使得$|I-I^\ast|<0.005$.
+\end{example}
+
+\begin{example}
+  证明以下极限是存在有限的:
+  \[ \lim_{t\to0^+}\bigg(
+   \int_0^1\frac{\dx}{(x^4+t^4)^{1/4}} + \ln t
+  \bigg). \]
+\end{example}
+
+\begin{example}
+  设$f$和$f'$在$[0,+\infty)$上连续，且当$x\ge10^{10}$时， $f(x)=0$. 证明:
+  \[ \int_0^{+\infty}[f(x)]^2\,\dx \le 2
+  \sqrt{\int_0^{+\infty}x^2[f(x)]^2\,\dx}
+  \sqrt{\int_0^{+\infty}[f'(x)]^2\,\dx}.\]
+\end{example}
+
+\begin{example}
+  设$f:[0,+\infty)$是连续且严格递增的函数，且$f(0)=0$. 令$g=f^{-1}$. 证明:
+  \[ \int_0^af(x)\,\dx + \int_0^bg(y)\,\dy \ge ab. \]
+  对任意正数$a,b$都成立，并求出取等条件.
+\end{example}
+
+\begin{example}
+  设$f$是$\MR$上连续的实值函数，且反常积分$\int_{-\infty}^{+\infty}
+  |f(x)|\,\dx$收敛. 在$\MR$上定义函数$g$:
+  \[ g(y)=\int_{-\infty}^{+\infty}f(x)\cos(xy)\,\dx, \]
+  证明: $g$是连续的.
+\end{example}
+
+\begin{example}
+  设$f$和$g$都是$\MR$上连续的实值函数，满足$\lim_{|x|\to+\infty}f(x)=0$且
+  $\int_{-\infty}^{+\infty}|g(x)|\,\dx<+\infty$. 在$\MR$上定义函数$h$:
+  \[ h(x) = \int_{-\infty}^{+\infty}f(x-y)g(y)\,\dy, \]
+  证明: $\lim_{|x|\to+\infty}h(x)=0$.
+\end{example}
+
+\begin{example}
+  证明: 积分
+  \[ \int_0^{+\infty}\cos x^2\,\dx\quad\text{和}
+  \quad \int_0^{+\infty}\sin x^2\,\dx \]
+  都收敛.
+\end{example}
+
+\begin{example}
+  设$f(x),0\le x\le1$是一个连续的实值函数，证明:
+  \[ \lim_{n\to\infty}(n+1)\int_0^1x^nf(x)\,\dx = f(1). \]
+\end{example}
+
+\begin{example}
+  计算
+  \[ \int_0^{+\infty}\frac{\ln x}{x^2+a^2}\,\dx, \]
+  这里$a>0$是一个常数.
+\end{example}
+
+\begin{example}
+  证明:
+  \[ I=\int_0^\pi\ln(\sin x)\,\dx \]
+  作为反常积分是收敛的，并求出$I$的值.
+\end{example}
+
+\begin{example}
+  证明:
+  \[\int_0^{+\infty}\frac{\sin x}{\sqrt x}\,\dx\]
+  作为反常积分是收敛的，但
+  \[\int_0^{+\infty}\frac{|\sin x|}{\sqrt x}\,\dx
+  =+\infty.\]
+\end{example}
+
+\section{函数列}
+\begin{example}
+  证明或给出反例: 如果$f$是$[0,1]$上非递减的实值函数，则存在$[0,1]$上的一列连续函数$\{f_n\}$，使得对每个$x\in[0,1]$有
+  \[ \lim_{n\to\infty}f_n(x) = f(x). \]
+\end{example}
+
+\begin{example}
+  设$f_n:\MR\to\MR,n=1,2,\cdots$可微，且对任意$n$和$x$有$|f_n'(x)|\le1$. 假定
+  \[ \lim_{n\to\infty}f_n(x) = g(x),\forall x\in\MR, \]
+  证明 $g:\MR\to\MR$是连续的.
+\end{example}
+
+\begin{example}
+  设$\{f_n\}$是一列将单位区间映为自己的非递减的函数列，假定
+  \[ \lim_{n\to\infty}f_n(x) = f(x) \]
+  是逐点收敛的，且$f$是连续函数. 证明: 对$0\le x\le1$，当$n\to\infty$时，$f_n(x)$一致收敛于$f(x)$. 注意这里的$f_n$不一定是连续的.
+\end{example}
+
+\begin{example}
+  设$f$以及$f_n,n=1,2,\cdots$是从$\MR$到$\MR$的函数，假定当$n\to\infty$时，只要$x_n\to x$， 就有$f(x_n)\to f(x)$. 证明: $f$是连续函数. 注意这里的函数$f_n$并没有假定连续.
+\end{example}
+
+\begin{example}
+  假定一列函数$f_n:\MR\to\MR$在$\MR$上一致收敛到某个函数$f:\MR\to\MR$，且对每个正整数$n$，极限$c_n=\lim_{x\to+\infty}f_n(x)$存在. 证明: $\lim_{n\to\infty}c_n$和$\lim_{x\to+\infty}f(x)$都存在且相等.
+\end{example}
+
+\begin{example}
+  \begin{enuma}
+    \item 给出一列$C^1$函数的例子
+  \end{enuma}
+      \[ f_k:[0,+\infty)\to\MR,\quad k=1,2,\cdots, \]
+      满足$f_k(0)=0,\forall k$，且对任意$x$，当$k\to\infty$时，$f_k'(x)\to f_0'(x)$，但$f_k(x)$不是收敛于$f_0(x)$的.
+  \begin{eenum}\setcounter{enumi}{1}
+    \item 给出一个额外的条件，使得对任意$x$，当$k\to\infty$时，$f_k(x)\to f_0(x)$.
+  \end{eenum}
+\end{example}
+
+\begin{example}
+  证明: 如果$f$是从$[0,1]$到自身的同胚（即$f$是连续的双射，且其逆映射也是连续的），则存在一列多项式$\{p_n\},n=1,2,3,\cdots$，使得$p_n$在$[0,1]$上一致收敛于$f$，且每个$p_n$都是$[0,1]$到自身的同胚.
+\end{example}
+
+\begin{example}
+  设对$n=1,2,\cdots$，$f_n:[0,1]\to[0,+\infty)$是连续函数，假定有
+  \begin{equation}\label{eq1.6.8.1}
+    f_1(x)\ge f_2(x)\ge f_3(x)\ge\cdots,\forall x\in[0,1].
+    \tag{$\ast$}
+  \end{equation}
+  令$f(x)=\lim_{n\to\infty}f_n(x)$以及$M=\sup_{0\le x\le1}f(x)$.
+  \begin{eenum}
+    \item 证明: 存在$t\in[0,1]$使得$f(t)=M$.
+    \item 通过例子说明，如果\eqref{eq1.6.8.1} 不成立，而仅仅知道对每个$x\in[0,1]$，存在$n_x$，使得对所以的$n\ge n_x$有$f_n(x)\ge f_{n+1}(x)$，则第 \ref{1.6.8.1} 部分中的结论不一定成立.
+  \end{eenum}
+\end{example}
+
+\begin{example}
+  设$f_1,f_2,\cdots$是$[0,1]$上的连续函数，满足$f_1\ge f_2\ge\cdots$，且$\lim_{n\to\infty}f_n(x)=0,\forall x\in[0,1]$. 问序列$\{f_n\}$是否在$[0,1]$上一致收敛于0?
+\end{example}
+
+\begin{example}
+  设整数$k\ge0$，定义一列映射
+  \[ f_n:\MR\to\MR,\quad f_n(x)=\frac{x^k}{x^2+n},\quad
+  n=1,2,\cdots. \]
+  对怎样的$k$，能使得此函数列在$\MR$上一致收敛? 对怎样的$k$，又能使得此函数列在$\MR$的任意有界子集上一致收敛?
+\end{example}
+
+\begin{example}
+  设$f:[0,1]\to\MR$连续，$k\in\MN$. 证明: 在次数不超过$k$的实多项式中，存在一个$P(x)$使得
+  \[ \sup_{0\le x\le1}|f(x)-P(x)| \]
+  取到最小值.
+\end{example}
+
+\begin{example}
+  设$\{P_n\}$是一列次数不超过$D$（一个固定的整数）的实多项式. 假定对$0\le x\le 1$，$P_n(x)$逐点收敛于$0$，证明: $P_n$在$[0,1]$上一致收敛于0.
+\end{example}
+
+\begin{example}
+  设$f$是紧区间$[a,b]$上的一个实值连续函数. 给定$\varepsilon>0$，证明: 存在多项式$p$使得$p(a)=f(a),p'(a)=0$，且$|p(x)-f(x)|<\varepsilon,\forall x\in[a,b]$.
+\end{example}
+
+\begin{example}
+  对每个正整数$n$，定义$f_n:\MR\to\MR,f_n(x)=\cos nx$. 证明: 序列$\{f_n\}$不存在一致收敛的子序列.
+\end{example}
+
+\begin{example}
+  设$\mathcal C_{[0,1]}$表示$[0,1]$上所以连续函数构成的空间，定义
+  \[ d(f,g)=\int_0^1\frac{|f(x)-g(x)|}{1+|f(x)-g(x)|}\,\dx. \]
+  \begin{eenum}
+    \item 证明: $d$是$\mathcal C_{[0,1]}$上的一个距离.
+    \item 证明: $\big(\mathcal C_{[0,1]},d\big)$不是一个完备距离空间.
+  \end{eenum}
+\end{example}
+
+\begin{example}
+  Arzel\`a-Ascoli定理断言，一个距离空间$\Omega$上的一列实值连续函数$\{f_n\}$，如果满足
+  \begin{enumerate}[label=(\arabic*),left=0.5cm]
+    \item\label{1.6.16.1} $\Omega$是紧的；
+    \item\label{1.6.16.2} $\sup\|f_n\|<+\infty$（这里$\|f_n\|=\sup\{|f_n(x)|,x\in\Omega\}$）；
+    \item\label{1.6.16.3} 序列$\{f_n\}$是等度连续的，
+  \end{enumerate}
+  则$\{f_n\}$是准紧的（即有一个一致收敛的子列）. 设$\Omega$是实轴上的一个子集，分别给出以下不是准紧的序列的例子: \ref{1.6.16.1} 和 \ref{1.6.16.2} 满足而 \ref{1.6.16.3} 不满足； \ref{1.6.16.1} 和 \ref{1.6.16.3} 满足而 \ref{1.6.16.2} 不满足；  \ref{1.6.16.2} 和 \ref{1.6.16.3} 满足而 \ref{1.6.16.1} 不满足. 在每种情形中，画出每个序列中典型函数的草图.
+\end{example}
+
+\begin{example}
+  设函数$f_n:[0,1]\to[0,1](n=1,2,\cdots)$满足: 只要$|x-y|\ge1/n$，就有$|f_n(x)-f_n(y)|\le|x-y|$. 证明: 序列$\{f_n\}_{n=1}^\infty$存在一个一致收敛的子序列.
+\end{example}
+
+\begin{example}
+  设$\{f_n\}$是$[0,1]$上的一列实值$C^1$函数，满足对所有$n$，有
+  \begin{gather*}
+    |f_n'(x)| \le \frac1{\sqrt x}\quad(0<x\le 1),\\
+    \int_0^1f_n(x)\,\dx = 0.
+  \end{gather*}
+  证明: 此序列存在一个在$[0,1]$上一致收敛的子序列.
+\end{example}
+
+\begin{example}
+  设$M$表示在$[0,1]$上的满足$f'$连续的实值连续函数$f$构成的集合，定义范数
+  \[ \|f\| = \sup_{0\le x\le1}|f(x)| + \sup_{0\le x\le1}|f'(x)|. \]
+  问$M$的哪些子集是紧的.
+\end{example}
+
+\begin{example}
+  设$(a_n)$是一列非零实数，证明: 函数列$f_n:\MR\to\MR$
+  \[ f_n(x) = \frac1{a_n}\sin(a_n x)+ \cos (x+a_n) \]
+  有一个子列收敛到一个连续函数.
+\end{example}
+
+\begin{example}
+  设$\{f_n\}$是一列从$[0,1]$映到$\MR$的连续函数. 假定对每个$x\in[0,1]$，当$n\to\infty$时，均有$f_n(x)\to0$. 且对所有$n$，存在常数$K$，使得
+  \[ \bigg| \int_0^1f_n(x)\,\dx \bigg| \le K <+\infty. \]
+  问是否有
+  \[ \lim_{n\to\infty}\int_0^1f_n(x)\,\dx = 0. \]
+\end{example}
+
+\begin{example}
+  设$\{g_n\}$是$[0,1]$上的一列二次可微函数，满足$g_n(0)=g_n'(0)=0,\forall n$. 假定对所有$n$ 和$x\in[0,1]$有$|g_n''(x)|\le 1$，证明: 存在$\{g_n\}$的一个子列在$[0,1]$上一致收敛.
+\end{example}
+
+\begin{example}
+  设$K$是定义在$[0,1]\times[0,1]$上的连续实值函数，$F$表示$[0,1]$上形如
+  \[ f(x) = \int_0^1g(y)K(x,y)\,\dy \]
+  的$f$构成的函数族，其中$g$是$[0,1]$上满足$|g|\le1$的连续函数.证明: 函数族$F$是等度连续的.
+\end{example}
+
+\begin{example}
+  设$\{g_n\}$一列从$[0,1]$映到$\MR$的连续Riemann可积函数，且对所有的$n$和$x$有$|g_n(x)|\le1$. 定义
+  \[ G_n(x) = \int_0^xg_n(t)\,\mathrm dt. \]
+  证明: $\{G_n\}$有一个一致收敛的子列.
+\end{example}
+
+\begin{example}
+  设$\{f_n\}$是一列定义在$[0,1]$上的连续实值函数，满足对任意$n$，有
+  \[ \int_0^1[f_n(y)]^2\,\dy \le 5. \]
+  定义$g_n:[0,1]\to\MR$
+  \[ g_n(x) = \int_0^1\sqrt{x+y}f_n(y)\,\dy. \]
+  \begin{eenum}
+    \item 求出一个常数$K$，使得对任意$n$，有$|g_n(x)|\le K$.
+    \item 证明: 序列$\{g_n\}$存在一个一致收敛的子列.
+  \end{eenum}
+\end{example}
+
+\begin{example}
+  设$\{f_n\}$是一列从$[0,1]$映到$\MR$的连续函数，满足
+  \[ \int_0^1\big( f_n(x)-f_m(x)\big)^2\,\dx\to0,\quad n,m\to\infty. \]
+  假定$K:[0,1]\times[0,1]\to\MR$连续，定义$g_n:[0,1]\to\MR$
+  \[ g_n(x) = \int_0^1K(x,y)f_n(y)\,\dy. \]
+  证明: 序列$\{g_n\}$一致收敛.
+\end{example}
+
+\begin{example}
+  设$\varphi_1,\varphi_2.\cdots,\varphi_n,\cdots$是$[0,1]$上非负连续的函数，且对每个$k=0,1,\cdots$，极限
+  \[ \lim_{n\to\infty}\int_0^1x^k\varphi_n(x)\,\dx \]
+  存在. 证明: 对$[0,1]$上的每个连续函数$f$，极限
+  \[ \lim_{n\to\infty}\int_0^1f(x)\varphi_n(x)\,\dx \]
+  均存在.
+\end{example}
+
+\begin{example}
+  设$\lambda_1,\lambda_2,\cdots,\lambda_n,\cdots$为实数，证明: 无穷级数
+  \[ \sum_{n=1}^\infty\frac{\ee^{\ii\lambda_nx}}{n^2} \]
+  在$\MR$上一致收敛到一个连续的极限函数$f:\MR\to\MC$. 进一步证明，极限
+  \[\lim_{T\to+\infty}\frac1{2T}\int_{-T}^Tf(x)\,\dx\]
+  存在.
+\end{example}
+
+\begin{example}
+  定义$\zeta$函数
+  \[ \zeta(x) = \sum_{n=1}^\infty \frac1{n^x}. \]
+  证明: $\zeta(x)$在区间$(1,+\infty)$上有定义，且存各阶连续的导数.
+\end{example}
+
+\begin{example}
+  设$f$是$\MR$上的连续函数，令
+  \[ f_n(x) = \frac1n\sum_{k=0}^{n-1}f\Big(x+\frac kn\Big). \]
+  证明: $f_n(x)$在每个有限区间$[a,b]$上都一致收敛.
+\end{example}
+
+\begin{example}
+  设$f$是$\MR$上的连续实值函数，满足
+  \[ |f(x)| \le \frac C{1+x^2}, \]
+  其中$C$是一个正的常数. 在$\MR$上定义函数$F$:
+  \[ F(x)=\sum_{n=-\infty}^\infty f(x+n). \]
+  \begin{eenum}
+    \item 证明: $F$是连续的以1为周期的周期函数.
+    \item 证明: 如果$G$是连续的以1为周期的周期函数，则
+    \[ \int_0^1F(x)G(x)\,\dx = \int_{-\infty}^{+\infty}
+    f(x)G(x)\,\dx. \]
+  \end{eenum}
+\end{example}
+
+\begin{example}
+  证明: 对任意连续函数$f:[0,1]\to\MR$和$\varepsilon>0$，存在一个形如
+  \[ g(x) = \sum_{k=0}^n C_kx^{4k} \]
+  的函数，这里$n$是某个整数，而$C_0,\cdots,C_n\in\MQ$，满足$|g(x)-f(x)|<\varepsilon$对任意$x\in[0,1]$成立.
+\end{example}
+
+\section{Fourier级数}
+\begin{example}
+  设$f:\MR\to\MR$是满足
+  \[
+      \begin{cases}
+        f(x) = x, & -\pi \le x<\pi\\
+        f(x+2n\pi) = f(x), & \forall n\in\MZ
+      \end{cases}
+  \]
+  的唯一函数.
+  \begin{eenum}
+    \item 证明: $f$的Fourier级数为
+      \[ \sum_{n=1}^\infty\frac{(-1)^{n+1}2\sin nx}n. \]
+    \item 证明: 此级数不是一致收敛的.
+    \item 对每个$x\in \MR$，求出此级数的和.
+  \end{eenum}
+\end{example}
+
+\begin{example}
+  设$f:\MR\to\MR$是周期为$2\pi$的周期函数，满足$f(x)=x^3,-\pi\le x<\pi$.
+  \begin{eenum}
+    \item 证明: $f$的Fourier级数具有形式$\sum_{n=1}^\infty b_n\sin nx$，并写出$b_n$的一个积分表达式（不需要计算出来）.
+    \item 证明: 此Fourier级数对任意$x$均收敛.
+    \item 证明:
+    \[ \sum_{n=1}^\infty b_n^2=\frac{2\pi^6}7. \]
+  \end{eenum}
+\end{example}
+
+\begin{example}
+  设$f:[0,\pi]\to\MR$连续，且满足
+  \[ \int_0^\pi f(x)\sin nx\,\dx= 0 \]
+  对任意整数$n\ge1$成立. 问$f$是否恒为零?
+\end{example}
+
+\begin{example}
+  设$f$是$\MR$上的连续实值函数，满足
+  \[ f(x)=f(x+1)+f\Big(x+\sqrt2\Big) \]
+  对任意$x$成立. 证明: $f$是常数.
+\end{example}
+
+\begin{example}
+  是否存在一个连续的实值函数$f(x),0\le x\le1$，使得
+  \[ \int_0^1xf(x)\,\dx=1\quad \text{且}
+  \quad \int_0^1x^nf(x)\,\dx=0 \]
+  对$m=0,2,3,4,\cdots$成立? 给出一个例子或者证明不存在这样的$f$.
+\end{example}
+
+\begin{example}
+  设$g$是$2\pi$周期的函数，且在$[-\pi,\pi]$上连续，其Fourier级数为
+  \[ \frac{a_0}2 + \sum_{n=1}^\infty
+  (a_n\cos nx + b_n\sin nx). \]
+  设$f$的周期为$2\pi$，且满足微分方程
+  \[ f''(x) + kf(x) = g(x), \]
+  这里$k\ne n^2,n=1,2,3,\cdots$. 求出$f$的Fourier级数，并证明其处处收敛.
+\end{example}
+
+\begin{example}
+  设$f$是$[0,2\pi]$上的二次可微的实值函数，且满足中
+  \[\int_0^{2\pi}f(x)\,\dx=0=f(2\pi)-f(0).\]
+  证明:
+  \[ \int_0^{2\pi}[f(x)]^2\,\dx
+  \le \int_0^{2\pi}[f'(x)]^2\,\dx. \]
+\end{example}
+
+\begin{example}
+  设$f$和$g$都是$\MR$上的连续函数，且满足$f(x+1)=f(x),g(x+1)=g(x),\forall x\in\MR$. 证明:
+  \[ \lim_{n\to\infty}\int_0^1f(x)g(nx)\,\dx =
+  \int_0^1f(x)\,\dx\int_0^1g(x)\,\dx. \]
+\end{example}
+
+\section{凸函数}
+\begin{example}
+  设$f:[0,1]\to\MR$连续，且$f(0)=0$. 证明: 存在一个连续的凹函数$g:[0,1]\to\MR$，满足$g(0)=0$且$g(x)\ge f(x),\forall x\in[0,1]$.
+\end{example}
+\begin{note}
+  函数$g:I\to\MR$称为是凹的是指:
+  \[ g\big(tx+(1-t)y\big)\ge tg(x)+(1-t)g(y) \]
+  对任意$x,y\in I$和$0\le t\le1$成立.
+\end{note}
+
+\begin{example}
+  设$f:I\to\MR$（这里$I$是$\MR$的一个区间）满足$f(x)>0,x\in I$. 假定对任意实数$c$，$\ee^{cx}f(x)$在$I$上是凸的，证明: $\ln f(x)$在$I$上是凸的.
+\end{example}
+\begin{note}
+  函数$g:I\to\MR$称为是凸的是指:
+  \[ g\big(tx+(1-t)y\big)\le tg(x)+(1-t)g(y) \]
+  对任意$x,y\in I$和$0\le t\le1$成立.
+\end{note}
+
+\begin{example}
+  设$f$是$\MR$上的实值连续函数，满足如下平均值不等式:
+  \[ f(x)\le\frac1{2h}\int_{x-h}^{x=h}f(y)\,\dy,\quad x\in\MR,\quad h>0. \]
+  证明:
+  \begin{eenum}
+    \item $f$在任意闭区间上的最大值都在其中一个端点处取到.
+    \item $f$是凸的.
+  \end{eenum}
+\end{example} 

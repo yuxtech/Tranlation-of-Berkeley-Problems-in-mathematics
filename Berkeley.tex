@@ -1,0 +1,72 @@
+\RequirePackage{etex}
+\documentclass[openany,usenames,dvipsnames]{ctexbook}
+\input{settings}
+\begin{document}
+
+\pagestyle{empty}
+\input{cover}
+\frontmatter
+\pagestyle{fancy}
+\fancyhf{}
+\cfoot{\thepage}
+\fancyhead[LO,RE]{\href{yuxtech.github.io}{我的博客: yuxtech.github.io}}
+\fancyhead[RO,LE]{\rightmark}
+\input{preface}
+\pdfbookmark[0]{目录页}{toc}
+\tableofcontents
+\mainmatter
+
+\part{问题}
+\input{chap1}
+
+\setcounter{chapter}{1}
+\chapter{多元微分学}
+\section{极限与连续}
+\begin{example}
+  设函数$f:\MR^n\to\MR^n$满足以下两个条件:
+  \begin{itemize}
+    \item 只要$K$是$\MR$的一个紧子集，$f(K)$就是紧的;
+    \item 如果$\{K_n\}$是$\MR^n$的一列单调递减的子集，则
+    \[ f\bigg( \bigcap_{n=1}^\infty K_n \bigg)
+    =\bigcap_{n=1}^\infty f(K_n). \]
+    证明: $f$是连续的.
+  \end{itemize}
+\end{example}
+
+\begin{example}
+  证明: 如果映射$g:\MR^n\to\MR^n$的图像在$\MR^n\times\MR^n$上是闭的，则$g$是连续的. 其逆命题是否正确?
+\end{example}
+\begin{note}
+  也参见问题 \ref{ex1.2.14}.
+\end{note}
+
+\begin{example}
+  假定$U\subset \MR^n$为开集，设映射$h:U\to\MR^n$是从$U$到$\MR^n$的同胚，且是一致连续的. 证明: $U=\MR^n$.
+\end{example}
+
+\begin{example}
+  设$f$是$\MR^2$上的实值连续函数，且满足
+  \begin{itemize}
+    \item 对每个$y_0\in\MR$，函数$x\mapsto f(x,y_0)$是连续的;
+    \item 对每个$x_0\in\MR$，函数$y\mapsto f(x_0,y)$是连续的;
+    \item 当$K$是$\MR^2$的紧子集时，$f(K)$也是紧的，
+  \end{itemize}
+  证明: $f$是连续的.
+\end{example}
+
+\begin{example}
+  设$f$是从球体$B_n=\{\vx\in\MR^n|\,\|\vx\|<1\}$到自身的连续映射（这里$\|\cdot\|$表示Euclide范数），且对所有非零的$\vx\in B_n$都有$\|f(\vx)\|<\|\vx\|$. 设$\vx_0$是$B_n$中的一个非零点，并定义序列$(\vx_k):x_k=f(\vx_{k-1})$，证明: $\lim_{k\to\infty}\vx_k=\zero$.
+\end{example}
+
+
+
+\part{答案}
+\input{chap1ans}
+\setcounter{chapter}{1}
+
+
+
+
+
+
+\end{document} 

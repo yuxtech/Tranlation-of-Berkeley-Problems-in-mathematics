@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2020.5.22)  16 JUL 2020 21:44
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2020.5.22)  26 JUL 2020 22:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1307,6 +1307,12 @@ LaTeX Warning: Label `1.6.0.1' multiply defined.
 
 LaTeX Warning: Label `1.6.0.2' multiply defined.
 
+
+LaTeX Warning: Label `1.6.0.1' multiply defined.
+
+
+LaTeX Warning: Label `1.6.0.2' multiply defined.
+
 )
 \openout1 = `Berkeley.aux'.
 
@@ -1648,7 +1654,7 @@ sb/m/n/10.53937 R$\TU/方正书宋_GBK(0)/m/n/10.53937 ，|  其 图 像 是 由
 t/10.53937 .0; 0/; .1=2n; n/; .1=n; 0/$
  []
 
-[88]) [89]
+[88] [89]) [90]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 72.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 72.
  (./Berkeley.aux)
@@ -1673,4 +1679,4 @@ Here is how much of TeX's memory you used:
  1348 hyphenation exceptions out of 8191
  79i,18n,86p,1142b,989s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Berkeley.pdf (93 pages).
+Output written on Berkeley.pdf (94 pages).

@@ -2717,7 +2717,7 @@
   \]
   因此对$x,y\in[0,1]$有
   \[ |g_n(x)-g_n(y)|\le|x-y|. \]
-  序列$\{g_n\}$是等度连续且一致有界的，所以由Arzel\`a-Ascoli定理，它由一个一致收敛的子列.
+  序列$\{g_n\}$是等度连续且一致有界的，所以由Arzel\`a-Ascoli定理，它有一个一致收敛的子列.
 \end{ans}
 
 \begin{ans}
@@ -2731,6 +2731,59 @@
     & \le \int_0^11\cdot\varepsilon\,\dy = \varepsilon.
   \end{align*}
   由于上述估计式对$F$中的所有$f$均成立，所以$F$是等度连续的.
+\end{ans}
+
+\begin{ans}
+  对任意$x\in[0,1]$，均有$|G_n(x)|\le\int_0^1\mathrm dt=1$，因此$\{G_n(x)\}$是一致有界的. 对任意$x,y\in[0,1]$，有
+  \[ |G_n(x)-G_n(y)| = | \int_x^yg_n(t)\,\mathrm dt | \le |x-y|, \]
+  因此$\{G_n(x)\}$是等度连续的，由Arzel\`a-Ascoli定理，它有一个一致收敛的子列.
+\end{ans}
+
+\begin{ans}
+  \begin{enumb}
+    \item 由Cauchy-Schwarz不等式，我们有
+  \end{enumb}
+  \begin{align*}
+    |g_n(x)| & \le \sqrt{\int_0^1(x+y)\,\dy}
+    \sqrt{\int_0^1\big(f_n(y)\big)\,\dy} \\
+    & \le \sqrt{\int_0^1(1+y)\,\dy}\cdot\sqrt5
+    =\sqrt{\frac{15}2}.
+  \end{align*}
+  \begin{enumc}\setcounter{enumi}{1}
+    \item 由于$\sqrt{x+y}$是单位闭圆盘上的连续函数，因此它是一致连续的. 因此，对任意$\varepsilon>0$，存在$\delta>0$使得当$|x_1-x_2|+|y_1-y_2|<\delta$时，
+  \end{enumc}
+  \[ |\sqrt{x_1+y_1}-\sqrt{x_2+y_2}|<\varepsilon. \]
+  特别地，当$|x_1-x_2|<\delta$时，
+  $|\sqrt{x_1+y}-\sqrt{x_2+y}|<\varepsilon$，因此
+  \begin{align*}
+    |g_n(x_1)-g_n(x_2)| & = 
+      \bigg| \int_0^1\big( \sqrt{x_1+y}-\sqrt{x_2+y} \big)f_n(y)\,\dy \bigg|\\
+      & \le \varepsilon\int_0^1|f_n(y)|\,\dy\\
+      & \le 5\varepsilon.
+  \end{align*}
+  由于上述$\delta$对所有的$n$都成立，函数族$\{g_n\}$是等度连续的. 而我们已经证明了一致有界性，因此由Arzel\`a-Ascoli定理，它有一个一致收敛的子列.
+\end{ans}
+
+\begin{ans}
+  我们首先证明$\{g_n\}$在上确界范数下是一个Cauchy列. 由Cauchy-Schwarz不等式，我们有
+  \begin{align*}
+    |g_n(x)-g_m(x)| & \le \int_0^1|K(x,y)|
+      \big( f_n(y)-f_m(y) \big)\,\dy \\
+      & \le \sqrt{\int_0^1|K(x,y)|^2\,\dy}
+            \sqrt{\int_0^1|f_n(y)-f_m(y)|^2\,\dy}.
+  \end{align*}
+  因此，
+  \[
+    \sup_{x\in[0,1]}|g_n(x)-g_m(x)|
+    \le \sup_{x\in[0,1]}
+      \sqrt{\int_0^1|K(x,y)|^2\,\dy}
+      \sqrt{\int_0^1|f_n(y)-f_m(y)|^2\,\dy}.
+  \]
+  由于$K$是连续的，那么它是可积的. 令$M=\sup_{x,y\in[0,1]}|K(x,y)|$，我们有
+  \[
+    \| g_n(x)-g_m(y) \| \le M\sqrt{\int_0^1|f_n(y)-f_m(y)|^2\,\dy} \to 0,
+  \]
+  这说明$\{g_n\}$在上确界范数下为Cauchy列. 而$C[0,1]$在此范数下是完备的，因此$\{g_n\}$是一致收敛的.
 \end{ans}
 
 

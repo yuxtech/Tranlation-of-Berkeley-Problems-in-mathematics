@@ -2607,7 +2607,7 @@
         \draw(0,1)node[left]{1} -- (0.05,1);
         \fill(0,0)circle(0.5pt) (1,1)circle(0.5pt);
         \foreach \i in {1,2,3,4}
-          \draw[domain=0:1]plot(\x,{(\x)^(\i)});
+          \draw[domain=0:1,thick]plot(\x,{(\x)^(\i)});
       \end{tikzpicture}
     }
     \subcaptionbox{\label{fig1.6.16b}$g_n$}[0.3\textwidth]
@@ -2756,7 +2756,7 @@
   特别地，当$|x_1-x_2|<\delta$时，
   $|\sqrt{x_1+y}-\sqrt{x_2+y}|<\varepsilon$，因此
   \begin{align*}
-    |g_n(x_1)-g_n(x_2)| & = 
+    |g_n(x_1)-g_n(x_2)| & =
       \bigg| \int_0^1\big( \sqrt{x_1+y}-\sqrt{x_2+y} \big)f_n(y)\,\dy \bigg|\\
       & \le \varepsilon\int_0^1|f_n(y)|\,\dy\\
       & \le 5\varepsilon.
@@ -2783,7 +2783,249 @@
   \[
     \| g_n(x)-g_m(y) \| \le M\sqrt{\int_0^1|f_n(y)-f_m(y)|^2\,\dy} \to 0,
   \]
-  这说明$\{g_n\}$在上确界范数下为Cauchy列. 而$C[0,1]$在此范数下是完备的，因此$\{g_n\}$是一致收敛的.
+  这说明$\{g_n\}$在上确界范数下为Cauchy列. 而$\mathcal C[0,1]$在此范数下是完备的，因此$\{g_n\}$是一致收敛的.
 \end{ans}
+
+\begin{ans}
+  我们将对$\mathcal C[0,1]$上配备了上确界范数
+  \[
+    \| f-g \|=\sup\{|f(x)-g(x)|\,|x\in[0,1]\}
+  \]
+  的空间应用Stone-Weierstrass逼近定理. 令$f\in\mathcal C[0,1]$，以及$\{p_n\}$是一列在上确界范数意义下收敛于$f$的多项式. 利用我们对$k=0$的假设可知，存在正数$M$，使得对任意$n$，有$|\int_0^1\varphi_n(x)\,\dx|\le M$. 对任意$\varepsilon>0$，存在整数$k(\varepsilon)$，使得当$k\ge k(\varepsilon)$时，
+  $\|f-p_{k(\varepsilon)}\|\le\varepsilon/(3M)$. 由于
+  $\int_0^1p_{k(\varepsilon)}(x)\varphi_n(x)\,\dx$收敛，它是一个Cauchy列，所以存在整数$n(\varepsilon)$使得
+  \[
+    \bigg| \int_0^1p_{k(\varepsilon)}(x)\varphi_n(x)\,\dx
+    -\int_0^1p_{k(\varepsilon)}(x)\varphi_m(x)\,\dx
+     \bigg| <\frac\varepsilon,\quad\forall m,n\ge n(\varepsilon),
+  \]
+  此时，我们有
+  \begin{align*}
+    &\bigg| \int_0^1f(x)\varphi_n(x)\,\dx
+    -\int_0^1f(x)\varphi_m(x)\,\dx\bigg|\\
+    = {}& \bigg| \int_0^1f(x)\varphi_n(x)\,\dx
+    -\int_0^1p_{k(\varepsilon)}(x)\varphi_m(x)\,\dx \bigg| \\
+    &+
+    \bigg| \int_0^1p_{k(\varepsilon)}(x)\varphi_n(x)\,\dx
+    -\int_0^1p_{k(\varepsilon)}(x)\varphi_m(x)\,\dx
+     \bigg|\\
+     &+
+     \bigg| \int_0^1p_{k(\varepsilon)}\varphi_m(x)\,\dx
+     -\int_0^1f(x)\varphi_m(x)\,\dx \bigg|\\
+     \le {}& \int_0^1|f(x)-p_{k(\varepsilon)(x)}
+     \varphi_n(x)|\,\dx
+     +\frac\varepsilon3+
+     \int_0^1|f(x)-p_{k(\varepsilon)(x)}|
+     \varphi_m(x)\,\dx\\
+     \le {}&\|f-p_{k(\varepsilon)}\|\int_0^1\varphi_n(x)\,\dx
+     +\|f-p_{k(\varepsilon)}\|\int_0^1\varphi_m(x)\,\dx\\
+     \le {}&\varepsilon.
+  \end{align*}
+  因此序列$\int_0^1f\varphi_n(x)\,\dx$是Cauchy列，从而它收敛.
+\end{ans}
+
+\begin{ans}
+  由于
+  \[
+    \bigg| \frac{\ee^{\ii\lambda_nx}}{n^2} \bigg|
+    \le\frac1{n^2}\quad\text{且}\quad \sum_{n=1}^\infty\frac1{n^2}<+\infty,
+  \]
+  根据Weierstrass判别法知，所给的级数在$\MR$上一致收敛到某个连续函数$f$. 由其一致收敛性，我们有
+  \[
+    \frac1{2T}\int_{-T}^T\sum_{n=1}^\infty
+    \frac{\ee^{\ii\lambda_nx}}{n^2}\,\dx =
+    \frac1{2T}\sum_{n=1}^\infty\int_{-T}^T
+    \frac{\ee^{\ii\lambda_nx}}{n^2}\,\dx =
+    \sum_{n=1}^\infty
+    \frac{\sin\lambda_nT}{n^2\lambda_nT}
+    \footnote{约定$\sin x/x$在$x=0$处的值为1.}.
+  \]
+  由于
+  \[
+    \bigg| \frac{\sin\lambda_nT}{n^2\lambda_nT} \bigg| \le\frac1{n^2},
+  \]
+  再次由Weierstrass判别法知
+  \[
+    \sum_{n=1}^\infty
+    \frac{\sin\lambda_nT}{n^2\lambda_nT}
+  \]
+  关于$T$是一致收敛的. 因此，我们有
+  \begin{align*}
+    \lim_{T\to+\infty}\frac1{2T}\int_{-T}^Tf(x)\,\dx
+    & = \lim_{T\to+\infty}
+    \sum_{n=1}^\infty
+    \frac{\sin\lambda_nT}{n^2\lambda_nT}\\
+    & =\sum_{n=1}^\infty\lim_{T\to+\infty}
+    \sum_{n=1}^\infty
+    \frac{\sin\lambda_nT}{n^2\lambda_nT}
+    =\sum_{\lambda_n=0}\frac1{n^2}.
+  \end{align*}
+\end{ans}
+
+\begin{ans}
+  令$\sigma>1$， 只需要证明$\zeta(x)$对$x\ge\sigma$有定义，且具有连续的导数. 对$x\ge \sigma$，由于$n^{-x}\le n^{-\sigma}$，级数$\sum_{n=1}^\infty n^{-x}$收敛，那么由Weierstrass判别法，此级数一致收敛，因此$\zeta(x)$是连续函数. 要要证他具有各阶连续的导数，我们将级数求导$k$次，得到
+  \[
+    \sum_{n=2}^\infty\frac{(-\ln n)^k}{n^x}.
+  \]
+  只需证明此级数对$k$是一致收敛的. 由于
+  \[
+    \bigg| \frac{(-\ln n)^k}{n^x} \bigg|
+    \le \frac{(\ln n)^k}{n^\sigma},
+  \]
+  而级数$\sum_{n=2}^\infty\frac{(\ln n)^k}{n^\sigma}$是收敛的，因此级数
+  \[
+    \sum_{n=2}^\infty\frac{(-\ln n)^k}{n^x}.
+  \]
+  一致收敛，得证.
+\end{ans}
+
+\begin{ans}
+  给定区间$[a,b]$和$\varepsilon>0$，由于$f$是连续的，它在区间$[a,b+1]$上是一致连续的. 那么存在$N>0$使得当$n\ge N$且$|x-y|<1/n$时，我们有$|f(x)-f(y)|<\varepsilon$. 我们将证明对任意$x\in[a,b]$，$f_n(x)$一致收敛于
+  \[
+    \int_x^{x+1}f(y)\,\dy.
+  \]
+  取定$x$以及$n\ge N$，利用积分中值定理，我们有
+  \begin{align*}
+    \bigg|
+      \int_x^{x+1}f(y)\,\dy - f_n(x)
+    \bigg| & = \bigg|
+      \sum_{k=0}^{n-1}\int_{x+k/n}^{x+(k+1)/n}
+      f(y)\,\dy - f_n(x)
+    \bigg| \\
+    & = \bigg|
+      \sum_{k=0}^{n-1} \frac{f(a_k)}n - f_n(x)
+    \bigg|\quad x+\frac kn <a_k<x+\frac{k+1}n \\
+    & \le \frac1n\sum_{k=0}^{n-1}
+    |f(a_k) - f(x+k/n)| < \varepsilon.
+  \end{align*}
+  由于上式对任意$x$成立，证毕.
+\end{ans}
+
+\begin{ans}
+  设$\alpha>0$，则对$|n|>4\alpha$，当$x\in[-\alpha,\alpha]$时，
+  \[
+    |f(x+n)| \le \frac C{1+n^2/2} = M_n.
+  \]
+  由于级数$\sum_{n=-\infty}^{\infty}M_n$收敛，由Weierstrass判别法，级数
+  \[ \sum_{|n|>4\alpha}f(x+n) \]
+  是一致收敛的. 于是
+  \[ \sum_{n=-\infty}^\infty f(x+n) \]
+  在$[-\alpha,\alpha]$上一致收敛于$F(x)$，且$F(x)$在此区间上是连续的. 由$\alpha$的任意性，$F$在$\MR$上连续.
+  
+  我们有
+  \begin{align*}
+    F(x+1)-F(x) & = \lim_{\alpha\to\infty}
+    \sum_{n=-\alpha}^\alpha\big( f(x+1+n)-f(x+n) \big)\\
+    & = \lim_{\alpha\to\infty}\big(f(x+1+\alpha)
+    -f(x-\alpha)\big)\\
+    & = 0 .
+  \end{align*}
+  最后一个等号成立是根据我们对$f$的假设.
+  
+  如果$G$是周期为1的连续函数，由于级数
+  \[ \sum_{n=-\infty}^\infty f(x+n) \]
+  在$[0,1]$上一致收敛，所以
+  \[
+    \int_0^1F(x)G(x)\,\dx = \sum_{n=-\infty}^\infty
+     \int_0^1f(x+n)G(x)\,\dx.
+  \]
+  在上式右边的每一个积分中，令$y=x+n$，由于$G(y-n)=G(y)$，则
+  \[
+    \sum_{n=-\infty}^\infty\int_n^{n+1}g(y)G(y)\,\dy
+    =\int_{-\infty}^{+\infty}f(y)G(y)\,\dy.
+  \]
+\end{ans}
+
+\begin{ans}
+  给定$f$和$\varepsilon>0$，定义$h:[0,1]\to\MR$为$h(x)
+  =f\big(\sqrt[4]{x}\big)$. 由Stone-Weierstrass逼近定理，存在多项式$P$使得$|P(x)-h(x)|<\varepsilon/2$对$x\in[0,1]$成立，由此我们得到
+  \[
+    | P(x^4)-f(x) | = |P(x^4)-h(x^4)| < \varepsilon/2.
+  \]
+  如果$P=\sum_{k=0}^na_kx^k$，取$C_0,\cdots,C_n\in\MQ$使得$\sum_{k=0}^n|a_k-C_k|<\varepsilon/2$，则我们有
+  \[
+    \bigg|
+      \sum_{k=0}^nC_kx^{4k} - f(x)
+    \bigg| \le 
+    \bigg|
+      \sum_{k=0}^nC_kx^{4k} - \sum_{k=0}^n a_kx^{4k}
+    \bigg| + 
+    \bigg|
+      \sum_{k=0}^na_kx^{4k} - f(x)
+    \bigg| <\varepsilon.
+  \]
+\end{ans}
+
+\section{Fourier级数}
+\begin{ans}
+  \begin{enumb}
+    \item 对$n\in\MN$，我们有
+  \end{enumb}
+    \[
+      \frac1\pi\int_{-\pi}^\pi f(x)\cos nx\,\dx = 0,
+    \]
+    因为上述被积函数为奇函数. 且有
+    \begin{align*}
+      \frac1\pi\int_{-\pi}^\pi & = \frac2\pi
+      \int_0^\pi f(x)\sin n x\,\dx \\
+      & = \frac2\pi\bigg(
+        -\frac{x\cos nx}n\bigg|_0^\pi  + 
+        \int_0^\pi\frac{\cos nx}n\,\dx
+      \bigg) \\
+      & = \frac2\pi\frac{(-1)^{n+1}}n,
+    \end{align*}
+    所以$f$的Fourier级数为
+    \[ \sum_{n=1}^\infty \frac{(-1)^{n+1}2}n\sin nx. \]
+    \begin{enumc}
+     \setcounter{enumi}{1}
+     \item 如果级数是一致收敛的，则$f$是连续的，但$f$不连续，所以级数不是一致收敛的.
+     \item 由于$f$和$f'$是分段连续的，我们有
+    \end{enumc}
+      \begin{align*}
+        \sum_{n=1}^\infty \frac{(-1)^{n+1}2}n\sin nx
+        & = \frac{f(x-)+f(x+)}2 \\
+        & = \begin{cases}
+          f(x), & x\ne (2n+1)\pi\\
+          0, & x= (2n+1)\pi
+        \end{cases},n\in\MZ.
+      \end{align*}
+\end{ans}
+
+\begin{ans}
+  \begin{enumb}
+    \item 由于$f(x)$是一个奇函数，对$n\in\MN$，
+  \end{enumb}
+  \[ \frac1\pi\int_{-\pi}^\pi f(x)\cos nx\,\dx = 0. \]
+  其Fourier级数具有形式$\sum_{n=1}^\infty b_n\sin nx$，其中
+  \[
+    b_n=\frac1\pi\int_{-\pi}^\pi x^3\sin nx\,\dx.
+  \]
+  \begin{enumc}
+    \setcounter{enumi}{1}
+    \item 由于$f$和$f'$是分段连续的，我们有
+  \end{enumc}
+      \begin{align*}
+        \sum_{n=1}^\infty b_n\sin nx
+        & = \frac{f(x-)+f(x+)}2 \\
+        & = \begin{cases}
+          f(x), & x\ne (2n+1)\pi\\
+          0, & x= (2n+1)\pi
+        \end{cases},n\in\MZ.
+      \end{align*}
+  \begin{enumc}
+    \setcounter{enumi}{2}
+    \item 根据Parseval定理有，
+  \end{enumc}
+  \[
+    \frac12a_0^2 + \sum_{n=1}^\infty (a_n^2+b_n^2)
+    = \frac1\pi\int_{-\pi}^\pi f^2(x)\,\dx.
+  \]
+  而其中所有的$a_n=0$，故
+  \[
+    \sum_{n=1}^\infty b_n^2= \frac1\pi\int_{-\pi}^\pi
+    x^6\,\dx = \frac27\pi^6.
+  \]
+\end{ans}
+
 
 

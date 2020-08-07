@@ -2911,7 +2911,7 @@
   是一致收敛的. 于是
   \[ \sum_{n=-\infty}^\infty f(x+n) \]
   在$[-\alpha,\alpha]$上一致收敛于$F(x)$，且$F(x)$在此区间上是连续的. 由$\alpha$的任意性，$F$在$\MR$上连续.
-  
+
   我们有
   \begin{align*}
     F(x+1)-F(x) & = \lim_{\alpha\to\infty}
@@ -2921,7 +2921,7 @@
     & = 0 .
   \end{align*}
   最后一个等号成立是根据我们对$f$的假设.
-  
+
   如果$G$是周期为1的连续函数，由于级数
   \[ \sum_{n=-\infty}^\infty f(x+n) \]
   在$[0,1]$上一致收敛，所以
@@ -2946,10 +2946,10 @@
   \[
     \bigg|
       \sum_{k=0}^nC_kx^{4k} - f(x)
-    \bigg| \le 
+    \bigg| \le
     \bigg|
       \sum_{k=0}^nC_kx^{4k} - \sum_{k=0}^n a_kx^{4k}
-    \bigg| + 
+    \bigg| +
     \bigg|
       \sum_{k=0}^na_kx^{4k} - f(x)
     \bigg| <\varepsilon.
@@ -2969,7 +2969,7 @@
       \frac1\pi\int_{-\pi}^\pi & = \frac2\pi
       \int_0^\pi f(x)\sin n x\,\dx \\
       & = \frac2\pi\bigg(
-        -\frac{x\cos nx}n\bigg|_0^\pi  + 
+        -\frac{x\cos nx}n\bigg|_0^\pi  +
         \int_0^\pi\frac{\cos nx}n\,\dx
       \bigg) \\
       & = \frac2\pi\frac{(-1)^{n+1}}n,
@@ -3025,6 +3025,113 @@
     \sum_{n=1}^\infty b_n^2= \frac1\pi\int_{-\pi}^\pi
     x^6\,\dx = \frac27\pi^6.
   \]
+\end{ans}
+
+\begin{ans}
+  根据Carleson于1966年证明的结果，平方可积的函数几乎处处收敛于自己. 我们将函数$f$作奇延拓，所得函数的正弦级数的系数均为0，因此$f$的傅里叶级数处处收敛于0，那么$f$几乎处处为零. 再根据$f$的连续性可知$f$恒为零.
+\end{ans}
+
+\begin{ans}
+  由于$f$以$\sqrt2$为周期，我们有
+  \[
+    \hat f(n) = \int_0^1 f(x)\ee^{-2n\pi\ii x}\dx
+      = \int_0^1f\Big( x+\sqrt2 \Big)\ee^{-2n\pi\ii x}\dx.
+  \]
+  令$y=x+\sqrt2$，我们得到
+  \[
+    \hat f(n) \ee^{2n\pi\ii \sqrt2}\int_{\sqrt2}
+    ^{1+\sqrt2}f(y)\ee^{-2n\pi\ii y}\dy.
+  \]
+  由于$f$也是以$1$为周期的，我们有
+  \[
+    \hat f(n) = \ee^{2n\pi\ii\sqrt2}\int_0^1f(y)
+    \ee^{-2n\pi\ii y}\dy = \ee^{2n\pi\ii\sqrt2}
+    \hat f(n).
+  \]
+  当$n\ne0$时，$\ee^{2n\pi\ii\sqrt2}\ne1$，所以当$n\ne0$时，$\hat f(n)=0$，所以$f$是常数.
+\end{ans}
+
+\begin{ans}
+  \method 假定这样的$f$存在，由于$\ee^x$的幂级数展开式一致收敛，对任意$n>0$，我们有
+  \begin{align*}
+    \hat f(n) & = \int_0^1f(x)\ee^{-2\pi\ii nx}\dx\\
+     & = \sum_{k=0}^\infty\frac{-2\pi n\ii}{k!}
+     \int_0^1f(x)x^k\dx = -2\pi n\ii.
+  \end{align*}
+  上述结论与Riemann-Lebesgue引理矛盾，因为$\lim_{n\to\infty}\hat f(n)=0$，所以这样的函数不存在.
+
+  \method 根据已知假设，函数$x^2f(x)$与所有的多项式正交，因此由Stone-Weierstrass逼近定理，$x^2f(x)$必然恒为零，因此$f$也恒为零，这与第一个积分矛盾.
+\end{ans}
+
+\begin{ans}
+  因为$f''$存在，所以$f$的Fourier级数收敛于$f$. 设$f$的Fourier级数为
+  \[
+    \frac{\alpha_0}2 + \sum_{n=1}^\infty
+    (\alpha_n\cos nx+\beta_n\sin nx).
+  \]
+  由于$f''=g-kf$是连续的，通过把$f$的Fourier级数逐项微分两次，可得
+  \begin{gather*}
+    \frac{k\alpha_0}2 + \sum_{n=1}^\infty
+    \Big( \big(k-n^2\big)\alpha_n\cos nx+
+    \big(k-n^2\big)\beta_n\sin nx
+     \Big) =\\
+     \frac{a_0}2 + \sum_{n=1}^\infty (a_n\cos nx+b_n\sin nx).
+  \end{gather*}
+  所以我们有
+  \[
+    \alpha_0=\frac{a_0}k,\quad \alpha_n=\frac{a_n}{k-n^2},\quad
+    \beta_n=\frac{b_n}{k-n^2},\quad n\ge1.
+  \]
+\end{ans}
+
+\begin{ans}
+  考虑$f$的Fourier级数，
+  \[
+    f(x) = \frac{a_0}2 + \sum_{n=1}^\infty
+    ( a_n\cos nx + b_n\sin nx ).
+  \]
+  我们有$a_0=0$，根据Parseval定理得
+  \begin{align*}
+    \int_0^{2\pi} f^2(x)\,\dx & = \pi\sum_{n=1}^\infty
+    \big( a_n^2+b_n^2 \big) \\
+    & \le \pi\sum_{n=1}^\infty \big( n^2a_n^2+n^2b_n^2 \big)
+    = \int_0^{2\pi}\big(f'(x)\big)^2\,\dx.
+  \end{align*}
+\end{ans}
+
+\begin{ans}
+  由Riemann-Lebesgue引理可知，结论对所有形如
+  \[\cos k\pi x\quad \text{和}\quad \sin k\pi x\]
+  的$g(x)$是成立的. 由积分的线性性可知，此结果可推广到所有的三角多项式
+  \[ p(x)=\sum_{k=0}^n(a_k\cos k\pi x+b_n\sin k\pi x). \]
+  接下来我们要利用三角函数在上确界范数意义下，在连续函数里面是稠密的这个事实，将其推广到所有的连续函数. 对任意$\varepsilon>0$，存在$p_\varepsilon(x)$如上所述，使得
+  \[ |g(x)-p_\varepsilon(x)| <\varepsilon, \]
+  则
+  \begin{align*}
+    & \bigg| 
+      \lim_{n\to\infty}\int_0^1f(x)g(nx)\,\dx - 
+      \int_0^1f(x)\,\dx\int_0^1g(x)\,\dx\\
+      &-\bigg(
+       \lim_{n\to\infty}\int_0^1f(x)p_\varepsilon(nx)\,\dx
+       -\int_0^1f(x)\,\dx\int_0^1p_\varepsilon(x)\,\dx
+      \bigg)
+    \bigg|\\
+    \le {} & \bigg|
+      \lim_{n\to\infty}\int_0^1f(x)\big(
+        g(nx)-p_\varepsilon(nx)
+      \big)\,\dx
+    \bigg| + \bigg|
+      \int_0^1f(x)\,\dx\int_0^1\big(
+        g(x) - p_\varepsilon(x)
+      \big)\,\dx
+    \bigg|\\
+    \le {}& \lim_{n\to\infty}\int_0^1|f(x)|\,|
+        g(nx)-p_\varepsilon(nx)
+      |\,\dx + \int_0^1|f(x)|\,\dx\int_0^1|
+        g(x) - p_\varepsilon(x)|
+      \,\dx\\
+    \le {}&2\varepsilon\int_0^1|f(x)|\,\dx.
+  \end{align*}
 \end{ans}
 
 
